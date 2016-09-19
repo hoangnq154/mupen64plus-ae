@@ -3,7 +3,7 @@ apply plugin: 'signing'
 
 android {
     compileSdkVersion = 27
-    buildToolsVersion = '27.0.0'
+    buildToolsVersion = '27.0.1'
 
     allprojects {
         tasks.withType(JavaCompile) {
@@ -22,8 +22,8 @@ android {
         applicationId = "org.mupen64plusae.v3.fzurita"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode = 85
-        versionName = "3.0.10 (beta)"
+        versionCode = 161
+        versionName = "3.0.161 (beta)"
 
         buildTypes {
 
