@@ -45,9 +45,9 @@
 
 void LoadTex (int id, int tmu);
 
-static const int TEX_SIZE = 1024*1024*4;
 wxUint8 tex1[(int)(TEX_SIZE*1.2)];		// temporary texture
 wxUint8 tex2[(int)(TEX_SIZE*1.2)];
+
 wxUint8 *texture;
 wxUint8 *texture_buffer = tex1;
 
