@@ -22,6 +22,7 @@
 #include "vi_controller.h"
 
 #include <string.h>
+#include <api/callbacks.h>
 
 #include "api/m64p_types.h"
 #include "device/memory/memory.h"
@@ -144,6 +145,12 @@ void vi_vertical_interrupt_event(void* opaque)
     vi->field ^= (vi->regs[VI_STATUS_REG] >> 6) & 0x1;
 
     vi->count_per_scanline = ((vi->clock / vi->expected_refresh_rate) / (vi->regs[VI_V_SYNC_REG] + 1));
+
+    //Workaround for ROM hacks like Last impack
+    if(vi->count_per_scanline  < 1300)
+    {
+        vi->count_per_scanline = 1542;
+    }
 
     /* schedule next vertical interrupt */
     vi->delay = (vi->regs[VI_V_SYNC_REG] == 0)
