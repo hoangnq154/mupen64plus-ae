@@ -130,6 +130,13 @@ void write_vi_regs(void* opaque, uint32_t address, uint32_t value, uint32_t mask
     case VI_V_SYNC_REG:
         masked_write(&vi->regs[reg], value, mask);
         vi->count_per_scanline = (vi->clock / vi->expected_refresh_rate) / (vi->regs[VI_V_SYNC_REG] + 1);
+
+        //Workaround for ROM hacks like Last impack
+        if(vi->count_per_scanline  < 1300)
+        {
+            vi->count_per_scanline = 1542;
+        }
+
         vi->delay = (vi->regs[VI_V_SYNC_REG] + 1) * vi->count_per_scanline;
         if (vi->regs[VI_V_SYNC_REG] != 0 && vi->next_vi == 0)
         {
