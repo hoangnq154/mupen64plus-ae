@@ -23,6 +23,7 @@ private:
 
 	static const int _numPBO = 3;
 	GLuint m_PBO[_numPBO];
+	std::shared_ptr<std::vector<u8>> m_localData;
 	u32 m_curIndex;
 };
 

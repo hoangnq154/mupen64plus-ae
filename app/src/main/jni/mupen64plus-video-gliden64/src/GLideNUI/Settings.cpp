@@ -30,6 +30,7 @@ void _loadSettings(QSettings & settings)
 	config.video.cropMode = settings.value("cropMode", config.video.cropMode).toInt();
 	config.video.cropWidth = settings.value("cropWidth", config.video.cropWidth).toInt();
 	config.video.cropHeight = settings.value("cropHeight", config.video.cropHeight).toInt();
+	config.video.threadedVideo = settings.value("threadedVideo", config.video.threadedVideo).toInt();
 	settings.endGroup();
 
 	settings.beginGroup("texture");
@@ -152,6 +153,7 @@ void writeSettings(const QString & _strIniFolder)
 	settings.setValue("cropMode", config.video.cropMode);
 	settings.setValue("cropWidth", config.video.cropWidth);
 	settings.setValue("cropHeight", config.video.cropHeight);
+	settings.setValue("threadedVideo", config.video.threadedVideo);
 	settings.endGroup();
 
 	settings.beginGroup("texture");
