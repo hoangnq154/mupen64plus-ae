@@ -34,8 +34,7 @@
   <string name="menuItem_emulationProfiles">エミュレーションプロファイル</string>
   <string name="menuItem_touchscreenProfiles">タッチスクリーンプロファイル</string>
   <string name="menuItem_controllerProfiles">コントローラープロファイル</string>
-  <string name="menuItem_customCheats">カスタムチート</string>
-  <string name="menuItem_help">ヘルプ</string>
+    <string name="menuItem_help">ヘルプ</string>
   <string name="menuItem_faq">よくある質問</string>
   <string name="menuItem_helpForum">ヘルプフォーラム</string>
   <string name="menuItem_controllerDiagnostics">コントローラ診断</string>
@@ -67,19 +66,14 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">チートデータベースを再構築…</string>
-  <string name="toast_launchingEmulator">エミュレータを起動する…</string>
-  <string name="toast_loadingSession">状態の自動復元中...</string>
-  <string name="toast_savingSession">状態の自動保存中...</string>
-  <string name="toast_loadingSlot">スロット%1$dの読み込み中...</string>
+    <string name="toast_launchingEmulator">エミュレータを起動する…</string>
+    <string name="toast_loadingSlot">スロット%1$dの読み込み中...</string>
   <string name="toast_savingSlot">スロット%1$dへ保存中...</string>
   <string name="toast_loadingFile">%1$s 読み込こみ中</string>
   <string name="toast_savingFile">%1$s 保存中…</string>
   <string name="toast_overwritingFile">%1$sへ上書き中...</string>
-  <string name="toast_loadingGameInfo">ゲーム情報の読み込み...</string>
-  <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">スロット%1$dを使用中</string>
-  <string name="toast_sdInaccessible">SDカードににアクセスできません。 （USBケーブルを外してください）</string>
+    <!--Something happened (use '.')-->
+    <string name="toast_sdInaccessible">SDカードににアクセスできません。 （USBケーブルを外してください）</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -96,24 +90,19 @@
   <string name="actionCheatEditor_summary">チートコードの追加、編集、削除</string>
   <string name="actionShare_title">共有</string>
   <!--Preference Screens-->
-  <string name="screenGlobalSettings_title">標準設定</string>
-  <string name="screenGlobalSettings_summary">表示、オーディオ、ストレージとデバッグ設定</string>
-  <string name="screenCheats_title">チート</string>
+    <string name="screenCheats_title">チート</string>
   <string name="screenCheats_summaryEnabled">有効</string>
   <string name="screenCheats_summaryDisabled">使用禁止</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">チートの設定 (長押しで詳細を表示)</string>
-  <string name="categoryGln64_title">Gln64の設定</string>
-  <string name="categoryRice_title">Riceの設定</string>
+    <string name="categoryRice_title">Riceの設定</string>
   <string name="categoryGlide64_title">Glide64設定</string>
   <string name="categoryDisplay_title">表示</string>
   <string name="categoryAudio_title">オーディオ</string>
   <string name="categoryTouchscreen_title">タッチスクリーン</string>
   <string name="categoryInput_title">入力</string>
   <string name="categoryData_title">データ</string>
-  <string name="categoryGameSettings_title">ゲーム毎の設定</string>
-  <string name="categoryGameSettings_titleNamed">%1$sの設定</string>
-  <!--Checkbox Preferences-->
+    <!--Checkbox Preferences-->
   <string name="playShowCheats_title">チートを有効化</string>
   <string name="touchscreenFeedback_title">触覚フィードバック</string>
   <string name="touchscreenFeedback_summary">ボタンを押した際に振動</string>
@@ -123,15 +112,7 @@
   <string name="inputShareController_summary">入力デバイスは、一度に複数のプレーヤーを制御することができます。</string>
   <string name="displayImmersiveMode_title">Immersiveモード</string>
   <string name="displayImmersiveMode_summary">通知バーを隠す</string>
-  <string name="gln64Fog_title">霧</string>
-  <string name="gln64Fog_summary">(WIP)</string>
-  <string name="gln64Sai_title">2xSaiテクスチャフィルタ</string>
-  <string name="gln64Sai_summary">テクスチャピクセレーションを低減</string>
-  <string name="gln64ScreenClear_title">強制スクリーンクリア</string>
-  <string name="gln64ScreenClear_summary">無効にすると、正しく描写されなくなる可能性があります。</string>
-  <string name="gln64AlphaTest_title">アルファテスト</string>
-  <string name="gln64AlphaTest_summary">無効にすると、黒いテクスチャが発生することがあります</string>
-  <string name="riceAutoFrameskip_title">自動フレームスキップ</string>
+    <string name="riceAutoFrameskip_title">自動フレームスキップ</string>
   <string name="riceAutoFrameskip_summary">フレームレートを犠牲にしてスピードを向上させます</string>
   <string name="riceFastTexture_title">高速テクスチャ読み込み</string>
   <string name="riceFastTexture_summary">サークルトランジションの修正</string>
@@ -157,11 +138,7 @@
   <string name="displayOrientation_entryReverseLandscape">反転横向き</string>
   <string name="displayOrientation_entryPortrait">縦向き</string>
   <string name="displayOrientation_entryReversePortrait">反転縦向き</string>
-  <string name="displayPosition_title">画面の位置</string>
-  <string name="displayPosition_entryBottom">下部</string>
-  <string name="displayPosition_entryMiddle">中央</string>
-  <string name="displayPosition_entryTop">上部</string>
-  <string name="displayResolution_title">表示する解像度</string>
+    <string name="displayResolution_title">表示する解像度</string>
   <string name="displayResolution_entryNative">ネイティブ (最高画質)</string>
   <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
@@ -183,18 +160,18 @@
   <string name="videoHardwareType_entryCustom">カスタムプロファイル</string>
   <string name="videoPolygonOffset_title">ポリゴンオフセット</string>
   <string name="videoPolygonOffset_summary">フリッカー低減の手動設定</string>
-  <string name="gln64Frameskip_title">フレームスキップ</string>
-  <string name="gln64Frameskip_entryNever">フレームをスキップしない</string>
-  <string name="gln64Frameskip_entryUpTo1">最大1フレームをスキップ</string>
-  <string name="gln64Frameskip_entryUpTo2">最大2フレームをスキップ</string>
-  <string name="gln64Frameskip_entryUpTo3">最大3フレームをスキップ</string>
-  <string name="gln64Frameskip_entryUpTo4">最大4フレームをスキップ</string>
-  <string name="gln64Frameskip_entryUpTo5">最大5フレームをスキップ</string>
-  <string name="gln64Frameskip_entryExactly1">必ず1フレームをスキップ</string>
-  <string name="gln64Frameskip_entryExactly2">必ず2フレームをスキップ</string>
-  <string name="gln64Frameskip_entryExactly3">必ず3フレームをスキップ</string>
-  <string name="gln64Frameskip_entryExactly4">必ず4フレームをスキップ</string>
-  <string name="gln64Frameskip_entryExactly5">必ず5フレームをスキップ</string>
+  <string name="glide64Frameskip_title">フレームスキップ</string>
+  <string name="glide64Frameskip_entryNever">フレームをスキップしない</string>
+  <string name="glide64Frameskip_entryUpTo1">最大1フレームをスキップ</string>
+  <string name="glide64Frameskip_entryUpTo2">最大2フレームをスキップ</string>
+  <string name="glide64Frameskip_entryUpTo3">最大3フレームをスキップ</string>
+  <string name="glide64Frameskip_entryUpTo4">最大4フレームをスキップ</string>
+  <string name="glide64Frameskip_entryUpTo5">最大5フレームをスキップ</string>
+  <string name="glide64Frameskip_entryExactly1">必ず1フレームをスキップ</string>
+  <string name="glide64Frameskip_entryExactly2">必ず2フレームをスキップ</string>
+  <string name="glide64Frameskip_entryExactly3">必ず3フレームをスキップ</string>
+  <string name="glide64Frameskip_entryExactly4">必ず4フレームをスキップ</string>
+  <string name="glide64Frameskip_entryExactly5">必ず5フレームをスキップ</string>
   <string name="riceScreenUpdate_title">画面の更新方法</string>
   <string name="riceScreenUpdate_entryRomDefault">ROMのデフォルト</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">VI原点アップデート</string>
@@ -234,18 +211,14 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">選択したフォルダ： %1$s</string>
-  <string name="pathHiResTextures_title">インポートテクスチャパック</string>
-  <string name="pathHiResTextures_summary">ゲームにカスタムテクスチャ(ZIP)を適用</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">セーブデータフォルダ</string>
+    <string name="pathGameSaves_title">セーブデータフォルダ</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">マルチプレイ</string>
   <string name="playerMap_summary">各プレイヤーのコントローラーを定義</string>
   <!--Profile Preferences-->
   <string name="emulationProfile_title">エミュレーションプロファイル</string>
   <string name="touchscreenProfile_title">タッチスクリーンプロファイル</string>
-  <string name="controllerProfile_title">コントローラープロファイル</string>
-  <string name="controllerProfile1_title">コントローラー1のプロファイル</string>
+    <string name="controllerProfile1_title">コントローラー1のプロファイル</string>
   <string name="controllerProfile2_title">コントローラー2のプロファイル</string>
   <string name="controllerProfile3_title">コントローラー3のプロファイル</string>
   <string name="controllerProfile4_title">コントローラー4のプロファイル</string>
@@ -262,9 +235,7 @@
   <string name="confirmDeleteProfile_message">プロファイル \"%1$s\"? を削除しますか?</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">警告</string>
-  <string name="invalidInstall_message">Mupen64Plus AEは正しくインストールしていない可能性。 任意のプログラムのクラッシュが発生した場合アプリケーションを再インストールしてください。</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">ファイル名</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">初期中</string>
@@ -279,16 +250,11 @@
   <string name="cheatNotes_none">（このチートの詳細情報はありません）</string>
   <!--Cheat Editor-->
   <string name="menuItem_cheatEditor">チート編集</string>
-  <string name="cheatEditor_edit">チートの編集</string>
-  <string name="cheatEditor_help">ヘルプ</string>
-  <string name="cheatEditor_delete">チートの削除</string>
+    <string name="cheatEditor_delete">チートの削除</string>
   <string name="cheatEditor_confirm">よろしいですか?</string>
-  <string name="cheatEditor_info">チート情報</string>
-  <string name="cheatEditor_saveConfirm">チートファイルを保存しますか?</string>
-  <!--Hi-Res Texture Unpacking-->
+    <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">テクスチャの展開中</string>
-  <string name="pathHiResTexturesTask_message">しばらくお待ちください。この処理には多少時間がかかる場合があります。</string>
-  <string name="pathHiResTexturesTask_errorMessage">テクスチャの展開時に問題が発生しました！</string>
+    <string name="pathHiResTexturesTask_errorMessage">テクスチャの展開時に問題が発生しました！</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->

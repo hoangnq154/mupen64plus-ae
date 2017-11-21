@@ -62,21 +62,6 @@ public class NativeConfigFiles
 
         supportsFullGl = appData.doesSupportFullGL();
 
-        // gln64 config file
-        final ConfigFile gln64_conf = new ConfigFile( appData.gln64_conf );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "window width", String.valueOf( game.videoRenderWidth ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "window height", String.valueOf( game.videoRenderHeight ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "auto frameskip", boolToNum( game.isGln64AutoFrameskipEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "max frameskip", String.valueOf( game.gln64MaxFrameskip ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "polygon offset hack", boolToNum( global.isPolygonOffsetHackEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "polygon offset factor", String.valueOf( global.videoPolygonOffset ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "polygon offset units", String.valueOf( global.videoPolygonOffset ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "enable fog", boolToNum( game.isGln64FogEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "texture 2xSAI", boolToNum( game.isGln64SaiEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "enable alpha test", boolToNum( game.isGln64AlphaTestEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "force screen clear", boolToNum( game.isGln64ScreenClearEnabled ) );
-        gln64_conf.put( ConfigFile.SECTIONLESS_NAME, "hack z", boolToNum( game.isGln64HackDepthEnabled ) );
-
         // glide64 config file
         final ConfigFile glide64_conf = new ConfigFile( appData.glide64mk2_ini );
         glide64_conf.put( "DEFAULT", "aspect", "2" );                                                                       // Stretch to SurfaceView, Java will manage aspect ratio
@@ -238,7 +223,7 @@ public class NativeConfigFiles
 
         readHiResSettings(game, global, appData);
 
-        // gln64 config file
+        // GLideN64 config file
         final ConfigFile glideN64_conf = new ConfigFile( appData.glideN64_conf );
 
         mupen64plus_cfg.put( "Video-GLideN64", "configVersion", String.valueOf(GLideN64Prefs.VERSION) );
@@ -315,7 +300,6 @@ public class NativeConfigFiles
 
         mupen64plus_cfg.put( "Video-Angrylion", "VIOverlay", boolToTF( game.angrylionVIOverlayEnabled ) );
 
-        gln64_conf.save();
         glide64_conf.save();
         mupen64plus_cfg.save();
 

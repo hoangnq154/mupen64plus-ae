@@ -44,18 +44,14 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Csalás adatbázis újraépítése…</string>
-  <string name="toast_launchingEmulator">Emulátor indítása…</string>
-  <string name="toast_loadingSession">Játék auto folytatása</string>
-  <string name="toast_savingSession">Auto-mentés</string>
-  <string name="toast_loadingSlot">Mentése  %1$d betöltése</string>
+    <string name="toast_launchingEmulator">Emulátor indítása…</string>
+    <string name="toast_loadingSlot">Mentése  %1$d betöltése</string>
   <string name="toast_savingSlot">%1$d Mentése</string>
   <string name="toast_loadingFile">Betöltés %1$s…</string>
   <string name="toast_savingFile">Mentés %1$s…</string>
   <string name="toast_overwritingFile">%1$s felülírása…</string>
   <!--Something happened (use '.')-->
-  <string name="toast_usingSlot"> %1$d hely használata</string>
-  <string name="toast_sdInaccessible">SD kártya nem elérhető (USB-t csatlakoztasd le majd próbáld újra)</string>
+    <string name="toast_sdInaccessible">SD kártya nem elérhető (USB-t csatlakoztasd le majd próbáld újra)</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -72,8 +68,7 @@
   <string name="screenCheats_summaryDisabled">Kikapcsolva</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Csalás beállítások (hosszan nyomd a jegyzetekért)</string>
-  <string name="categoryGln64_title">Gln64 beállítások</string>
-  <string name="categoryRice_title">Rice beállítások</string>
+    <string name="categoryRice_title">Rice beállítások</string>
   <string name="categoryAudio_title">Hang</string>
   <string name="categoryTouchscreen_title">Érintőpanel</string>
   <string name="categoryInput_title">Bevitel</string>
@@ -86,15 +81,7 @@
   <string name="inputVolumeMappable_summary">Hangerő gombok programozásának engedélyezése</string>
   <string name="inputShareController_title">Kontroller megosztása</string>
   <string name="inputShareController_summary">Egy beviteli eszközt több játékos is irányíthat</string>
-  <string name="gln64Fog_title">Köd</string>
-  <string name="gln64Fog_summary">(dolgozunk rajta)</string>
-  <string name="gln64Sai_title">2xSaI textúra szűrő</string>
-  <string name="gln64Sai_summary">Csökkenti a textúra pixeleződést</string>
-  <string name="gln64ScreenClear_title">Képernyőtisztítás kényszerítése</string>
-  <string name="gln64ScreenClear_summary">Kapcsold ki a sebességért (okozhat videoproblémákat)</string>
-  <string name="gln64AlphaTest_title">Alfa teszt</string>
-  <string name="gln64AlphaTest_summary">Kapcsold ki a sebességért (fekete textúrákat okozhat)</string>
-  <string name="riceAutoFrameskip_title">Automata képkockaugrás </string>
+    <string name="riceAutoFrameskip_title">Automata képkockaugrás </string>
   <string name="riceAutoFrameskip_summary">Növeli a játék sebességét, fps szám ellenében</string>
   <string name="riceFastTexture_title">Gyors textúra betöltés</string>
   <string name="riceFastTexture_summary">Kijavítja a kör átmeneteket</string>
@@ -116,10 +103,7 @@
   <string name="displayOrientation_entryReverseLandscape">Fordított elforgatott</string>
   <string name="displayOrientation_entryPortrait">Portré</string>
   <string name="displayOrientation_entryReversePortrait">Fordított portré</string>
-  <string name="displayPosition_entryBottom">Alul</string>
-  <string name="displayPosition_entryMiddle">Középen</string>
-  <string name="displayPosition_entryTop">Felül</string>
-  <string name="videoPlugin_entryNone">Nincs (video kikapcsolva)</string>
+    <string name="videoPlugin_entryNone">Nincs (video kikapcsolva)</string>
   <string name="videoHardwareType_title">Vibrálás csökkentése</string>
   <string name="videoHardwareType_entryAuto">Telefon/tablet alapján auto-felismerés</string>
   <string name="videoHardwareType_entryStandard">Alap profil</string>
@@ -128,18 +112,18 @@
   <string name="videoHardwareType_entryO2">O-2 profil</string>
   <string name="videoHardwareType_entryQ">Q profil</string>
   <string name="videoHardwareType_entryT">T profil</string>
-  <string name="gln64Frameskip_title">Képkocka ugrás</string>
-  <string name="gln64Frameskip_entryNever">Soha ne ugorjon képkockát</string>
-  <string name="gln64Frameskip_entryUpTo1">Egynél többet soha</string>
-  <string name="gln64Frameskip_entryUpTo2">Kettőnél többet soha</string>
-  <string name="gln64Frameskip_entryUpTo3">Háromnál többet soha</string>
-  <string name="gln64Frameskip_entryUpTo4">Négynél többet soha</string>
-  <string name="gln64Frameskip_entryUpTo5">Ötnél többet soha</string>
-  <string name="gln64Frameskip_entryExactly1">Pontosan 1 képkocka</string>
-  <string name="gln64Frameskip_entryExactly2">Pontosan 2 képkocka</string>
-  <string name="gln64Frameskip_entryExactly3">Pontosan 3 képkocka</string>
-  <string name="gln64Frameskip_entryExactly4">Pontosan 4 képkocka</string>
-  <string name="gln64Frameskip_entryExactly5">Pontosan 5 képkocka</string>
+  <string name="glide64Frameskip_title">Képkocka ugrás</string>
+  <string name="glide64Frameskip_entryNever">Soha ne ugorjon képkockát</string>
+  <string name="glide64Frameskip_entryUpTo1">Egynél többet soha</string>
+  <string name="glide64Frameskip_entryUpTo2">Kettőnél többet soha</string>
+  <string name="glide64Frameskip_entryUpTo3">Háromnál többet soha</string>
+  <string name="glide64Frameskip_entryUpTo4">Négynél többet soha</string>
+  <string name="glide64Frameskip_entryUpTo5">Ötnél többet soha</string>
+  <string name="glide64Frameskip_entryExactly1">Pontosan 1 képkocka</string>
+  <string name="glide64Frameskip_entryExactly2">Pontosan 2 képkocka</string>
+  <string name="glide64Frameskip_entryExactly3">Pontosan 3 képkocka</string>
+  <string name="glide64Frameskip_entryExactly4">Pontosan 4 képkocka</string>
+  <string name="glide64Frameskip_entryExactly5">Pontosan 5 képkocka</string>
   <string name="riceScreenUpdate_title">Képernyő frissítési módszer</string>
   <string name="riceScreenUpdate_entryRomDefault">ROM alapértelmezett</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">VI origin update</string>
@@ -175,10 +159,7 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Kiválasztott mappa: %1$s</string>
-  <string name="pathHiResTextures_title">Textúra csomag importálása</string>
-  <string name="pathHiResTextures_summary">Egyéni textúrák alkalmazása (ZIP) a játékhoz</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Mentési mappa</string>
+    <string name="pathGameSaves_title">Mentési mappa</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Többjátékos</string>
   <string name="playerMap_summary">Minden játékos kontrollerének a definiálása</string>
@@ -209,11 +190,9 @@
   <string name="cheatNotes_title">Jegyzetek</string>
   <string name="cheatNotes_none">(nincsenek jegyzetek ehhez a csaláshoz)</string>
   <!--Cheat Editor-->
-  <string name="cheatEditor_help">Segítség</string>
-  <!--Hi-Res Texture Unpacking-->
+    <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Textúrák kicsomagolása</string>
-  <string name="pathHiResTexturesTask_message">Légy türelemmel. Ez időbe telik.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Probléma a textúrák kicsomagolásánál!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Probléma a textúrák kicsomagolásánál!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->

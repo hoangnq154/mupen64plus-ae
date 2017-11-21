@@ -132,9 +132,6 @@ public class AppData
     
     /** The path of the input library. Deleted on uninstall, not accessible without root. */
     public final String inputLib;
-    
-    /** The path of the gln64 configuration file. Deleted on uninstall, sometimes overwritten on update. */
-    public final String gln64_conf;
 
     /** The path of the glideN64 configuration file. Deleted on uninstall, sometimes overwritten on update. */
     public final String glideN64_conf;
@@ -280,7 +277,6 @@ public class AppData
 
         coreLib = libsDir + "/libmupen64plus-core.so";
         inputLib = libsDir + "/libmupen64plus-input-android.so";
-        gln64_conf = coreSharedDataDir + "/gln64.conf";
         glide64mk2_ini = coreSharedDataDir + "/Glide64mk2.ini";
         glideN64_conf = coreSharedDataDir + "/GLideN64.custom.ini";
         mupencheat_default = coreSharedDataDir + "/mupencheat.default";

@@ -43,7 +43,6 @@ public class EmulationProfileActivity extends ProfileActivity
     // These constants must match the keys found in preferences_emulation.xml
     private static final String SCREEN_ROOT = "screenRoot";
     private static final String CATEGORY_RICE = "categoryRice";
-    private static final String CATEGORY_GLN64 = "categoryGln64";
     private static final String CATEGORY_GLIDE64 = "categoryGlide64";
     private static final String CATEGORY_GLIDE64_ADVANCED = "categoryGlide64Advanced";
     private static final String CATEGORY_GLIDEN64_TEXTURE = "categoryGliden64Texture";
@@ -60,12 +59,10 @@ public class EmulationProfileActivity extends ProfileActivity
     private static final String LIBGLIDE64_SO = "libmupen64plus-video-glide64mk2.so";
     private static final String LIBGLIDEN64_SO = "libmupen64plus-video-gliden64.so";
     private static final String LIBRICE_SO = "libmupen64plus-video-rice.so";
-    private static final String LIBGLN64_SO = "libmupen64plus-video-gln64.so";
     private static final String LIBANGRYLION_SO = "libmupen64plus-video-angrylion.so";
 
     // Preference menu items
     private PreferenceGroup mScreenRoot = null;
-    private PreferenceCategory mCategoryN64 = null;
     private PreferenceCategory mCategoryRice = null;
     private PreferenceCategory mCategoryGlide64 = null;
     private PreferenceCategory mCategoryGlide64Advanced = null;
@@ -129,7 +126,6 @@ public class EmulationProfileActivity extends ProfileActivity
     {        
         // Get some menu items for use later
         mScreenRoot = (PreferenceGroup) findPreference( SCREEN_ROOT );
-        mCategoryN64 = (PreferenceCategory) findPreference( CATEGORY_GLN64 );
         mCategoryRice = (PreferenceCategory) findPreference( CATEGORY_RICE );
         mCategoryGlide64 = (PreferenceCategory) findPreference( CATEGORY_GLIDE64 );
         mCategoryGlide64Advanced = (PreferenceCategory) findPreference( CATEGORY_GLIDE64_ADVANCED);
@@ -171,19 +167,6 @@ public class EmulationProfileActivity extends ProfileActivity
         // Hide certain categories altogether if they're not applicable. Normally we just rely on
         // the built-in dependency disabler, but here the categories are so large that hiding them
         // provides a better user experience.
-        
-        if(mCategoryN64 != null)
-        {
-            if( LIBGLN64_SO.equals( videoPlugin ) )
-            {
-                mScreenRoot.addPreference( mCategoryN64 );
-            }
-            else
-            {
-                mScreenRoot.removePreference( mCategoryN64 );
-            }
-        }
-
         if(mCategoryRice != null)
         {
             if( LIBRICE_SO.equals( videoPlugin ) )
@@ -197,8 +180,7 @@ public class EmulationProfileActivity extends ProfileActivity
 
         }
 
-        if(mCategoryGlide64 != null &&
-            mCategoryGlide64 != null)
+        if(mCategoryGlide64 != null)
         {
             if( LIBGLIDE64_SO.equals( videoPlugin ) )
             {
@@ -254,7 +236,7 @@ public class EmulationProfileActivity extends ProfileActivity
             ArrayList<String> entries = new ArrayList<String>();
             ArrayList<String> values = new ArrayList<String>();
 
-            if( LIBGLN64_SO.equals( videoPlugin ) || LIBRICE_SO.equals( videoPlugin ) || LIBGLIDE64_SO.equals( videoPlugin ))
+            if( LIBRICE_SO.equals( videoPlugin ) || LIBGLIDE64_SO.equals( videoPlugin ))
             {
                 //Don't allow LLE mode
                 entries.add(getString(R.string.rsp_hle));

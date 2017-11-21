@@ -65,19 +65,14 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Ombyggnad fusk databas…</string>
-  <string name="toast_launchingEmulator">Startar emulator…</string>
-  <string name="toast_loadingSession">Auto-återupptar spelet…</string>
-  <string name="toast_savingSession">Auto-spara spel…</string>
-  <string name="toast_loadingSlot">Laddar slot %1$d…</string>
+    <string name="toast_launchingEmulator">Startar emulator…</string>
+    <string name="toast_loadingSlot">Laddar slot %1$d…</string>
   <string name="toast_savingSlot">Sparar slot %1$d…</string>
   <string name="toast_loadingFile">Laddar %1$s…</string>
   <string name="toast_savingFile">Sparar %1$s…</string>
   <string name="toast_overwritingFile">Skriver över %1$s…</string>
-  <string name="toast_loadingGameInfo">Ladda spelinformation...</string>
-  <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">Använder nu slot %1$d.</string>
-  <string name="toast_sdInaccessible">Det går inte att komma åt SD kortet (koppla ur USB kabeln och försök igen).</string>
+    <!--Something happened (use '.')-->
+    <string name="toast_sdInaccessible">Det går inte att komma åt SD kortet (koppla ur USB kabeln och försök igen).</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -93,14 +88,12 @@
   <string name="actionCheatEditor_title">Hantera fuskkoder</string>
   <string name="actionShare_title">Dela</string>
   <!--Preference Screens-->
-  <string name="screenGlobalSettings_title">Globala inställningar</string>
-  <string name="screenCheats_title">Fusk</string>
+    <string name="screenCheats_title">Fusk</string>
   <string name="screenCheats_summaryEnabled">Akriverad</string>
   <string name="screenCheats_summaryDisabled">Inaktiverad</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Fusk alternativ (håll in för beskrivning)</string>
-  <string name="categoryGln64_title">Gln64 inställningar</string>
-  <string name="categoryRice_title">Rice inställningar</string>
+    <string name="categoryRice_title">Rice inställningar</string>
   <string name="categoryGlide64_title">Glide64 inställningar</string>
   <string name="categoryDisplay_title">Visa</string>
   <string name="categoryAudio_title">Ljud</string>
@@ -115,15 +108,7 @@
   <string name="inputVolumeMappable_summary">Tillåt volymknapparna at bli mappade till kontroller</string>
   <string name="inputShareController_title">Dela controller</string>
   <string name="inputShareController_summary">Låt en enda inmatningsenhet för att styra flera spelare på gång</string>
-  <string name="gln64Fog_title">Dimma</string>
-  <string name="gln64Fog_summary">(behövs arbete)</string>
-  <string name="gln64Sai_title">2xSaI textur filter</string>
-  <string name="gln64Sai_summary">Minskar textur bildpunktuppdelning</string>
-  <string name="gln64ScreenClear_title">Tving skärm klarning</string>
-  <string name="gln64ScreenClear_summary">Inaktivera för hastighet (kan orsaka video buggar)</string>
-  <string name="gln64AlphaTest_title">Alpha test</string>
-  <string name="gln64AlphaTest_summary">Inaktivera för hastighet (kan orsaka svarta texturer)</string>
-  <string name="riceAutoFrameskip_title">Auto frameskip</string>
+    <string name="riceAutoFrameskip_title">Auto frameskip</string>
   <string name="riceAutoFrameskip_summary">Förbättrar spel hastighet till kostnad av framerate</string>
   <string name="riceFastTexture_title">Snabb textur laddning</string>
   <string name="riceFastTexture_summary">Fixar cirkel övergångar</string>
@@ -149,10 +134,7 @@
   <string name="displayOrientation_entryReverseLandscape">Omvänd landskap</string>
   <string name="displayOrientation_entryPortrait">Porträtt</string>
   <string name="displayOrientation_entryReversePortrait">Omvänd porträtt</string>
-  <string name="displayPosition_entryBottom">Botten</string>
-  <string name="displayPosition_entryMiddle">Mitten</string>
-  <string name="displayPosition_entryTop">Toppen</string>
-  <string name="displayResolution_title">Renderingsupplösning</string>
+    <string name="displayResolution_title">Renderingsupplösning</string>
   <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
   <string name="displayResolution_entry640x480">640 x 480</string>
@@ -170,18 +152,18 @@
   <string name="videoHardwareType_entryQ">Q profil</string>
   <string name="videoHardwareType_entryT">T profil</string>
   <string name="videoHardwareType_entryCustom">Personlig profil</string>
-  <string name="gln64Frameskip_title">Frameskip</string>
-  <string name="gln64Frameskip_entryNever">Aldrig hoppa ramar</string>
-  <string name="gln64Frameskip_entryUpTo1">Inte mer än 1 ram</string>
-  <string name="gln64Frameskip_entryUpTo2">Inte mer än 2 ramar</string>
-  <string name="gln64Frameskip_entryUpTo3">Inte mer än 3 ramar</string>
-  <string name="gln64Frameskip_entryUpTo4">Inte mer än 4 ramar</string>
-  <string name="gln64Frameskip_entryUpTo5">Inte mer än 5 ramar</string>
-  <string name="gln64Frameskip_entryExactly1">Precis 1 ram</string>
-  <string name="gln64Frameskip_entryExactly2">Precis 2 ramar</string>
-  <string name="gln64Frameskip_entryExactly3">Precis 3 ramar</string>
-  <string name="gln64Frameskip_entryExactly4">Precis 4 ramar</string>
-  <string name="gln64Frameskip_entryExactly5">Precis 5 ramar</string>
+  <string name="glide64Frameskip_title">Frameskip</string>
+  <string name="glide64Frameskip_entryNever">Aldrig hoppa ramar</string>
+  <string name="glide64Frameskip_entryUpTo1">Inte mer än 1 ram</string>
+  <string name="glide64Frameskip_entryUpTo2">Inte mer än 2 ramar</string>
+  <string name="glide64Frameskip_entryUpTo3">Inte mer än 3 ramar</string>
+  <string name="glide64Frameskip_entryUpTo4">Inte mer än 4 ramar</string>
+  <string name="glide64Frameskip_entryUpTo5">Inte mer än 5 ramar</string>
+  <string name="glide64Frameskip_entryExactly1">Precis 1 ram</string>
+  <string name="glide64Frameskip_entryExactly2">Precis 2 ramar</string>
+  <string name="glide64Frameskip_entryExactly3">Precis 3 ramar</string>
+  <string name="glide64Frameskip_entryExactly4">Precis 4 ramar</string>
+  <string name="glide64Frameskip_entryExactly5">Precis 5 ramar</string>
   <string name="riceScreenUpdate_title">Skärm uppdateringsmetod</string>
   <string name="riceScreenUpdate_entryRomDefault">ROM standard</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">VI ursprungs uppdatering</string>
@@ -216,10 +198,7 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Vald mapp: %1$s</string>
-  <string name="pathHiResTextures_title">Import textur pack</string>
-  <string name="pathHiResTextures_summary">Tillämpa anpassade texturer (ZIP-format) till ett spel</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Spel spar mapp</string>
+    <string name="pathGameSaves_title">Spel spar mapp</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Multi-player</string>
   <string name="playerMap_summary">Definera varje spelares kontroll(er)</string>
@@ -236,9 +215,7 @@
   <string name="confirmUnmapAll_message">Avtilldela alla kommandon för %1$s?</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">Varning</string>
-  <string name="invalidInstall_message">Mupen64 Plus AE kanske inte har installerats korrekt. Försök att installera om appen om du upplever några krascher.</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">filnamn</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">Initierar</string>
@@ -252,11 +229,9 @@
   <string name="cheatNotes_title">Anteckningar</string>
   <string name="cheatNotes_none">(inga anteckningar tillgängliga för detta fusk)</string>
   <!--Cheat Editor-->
-  <string name="cheatEditor_help">Hjälp</string>
-  <!--Hi-Res Texture Unpacking-->
+    <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Uppackning texturer</string>
-  <string name="pathHiResTexturesTask_message">Var god och vänta. Denna process kan ta lite tid.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Problem med uppackning av texturer!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Problem med uppackning av texturer!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->

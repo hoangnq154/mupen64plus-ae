@@ -71,7 +71,6 @@
     <string name="menuItem_emulationProfiles">Emulation profiles</string>
     <string name="menuItem_touchscreenProfiles">Touchscreen profiles</string>
     <string name="menuItem_controllerProfiles">Controller profiles</string>
-    <string name="menuItem_customCheats">Custom cheats</string>
     <string name="menuItem_help">Help</string>
     <string name="menuItem_faq">FAQ</string>
     <string name="menuItem_helpForum">Help forum</string>
@@ -122,16 +121,12 @@
 
 
     <!-- Something happening (typically use '-ing' and '…') -->
-    <string name="toast_rebuildingCheats">Rebuilding cheats database…</string>
     <string name="toast_launchingEmulator">Launching emulator…</string>
-    <string name="toast_loadingSession">Auto-resuming game…</string>
-    <string name="toast_savingSession">Auto-saving game…</string>
     <string name="toast_loadingSlot">Loading slot %1$d…</string>
     <string name="toast_savingSlot">Saving slot %1$d…</string>
     <string name="toast_loadingFile">Loading %1$s…</string>
     <string name="toast_savingFile">Saving %1$s…</string>
     <string name="toast_overwritingFile">Overwriting %1$s…</string>
-    <string name="toast_loadingGameInfo">Loading game info…</string>
     <string name="toast_savingScreenshot">Saving screenshot…</string>
     <string name="toast_canceling">Canceling…</string>
     <string name="toast_pleaseWait">Please wait…</string>
@@ -155,7 +150,6 @@
     <string name="toast_nativeMainFailure12">Failed to load plugins.</string>
     <string name="toast_nativeMainFailure13">Core failed to attach plugin.</string>
     <string name="toast_nativeMainFailureUnknown">Unknown launch error.</string>
-    <string name="toast_usingSlot">Now using slot %1$d.</string>
     <string name="toast_sdInaccessible">App data missing, attempting to reload.</string>
 
     <!-- ************************************************************************** -->
@@ -188,8 +182,6 @@
     <string name="actionShare_title">Share</string>
 
     <!-- Preference Screens -->
-    <string name="screenGlobalSettings_title">Global settings</string>
-    <string name="screenGlobalSettings_summary">Display, audio, storage, and debug settings</string>
     <string name="screenCheats_title">Cheats</string>
     <string name="screenCheats_summaryEnabled">Enabled</string>
     <string name="screenCheats_summaryDisabled">Disabled</string>
@@ -198,11 +190,9 @@
 
     <!-- Preference Categories -->
     <string name="categoryCheats_title">Cheat options (long-press for notes)</string>
-    <string name="categoryGln64_title">Gln64 settings</string>
     <string name="categoryRice_title">Rice settings</string>
     <string name="categoryGlide64_title">Glide64 settings</string>
     <string name="categoryGlide64Advanced_title">Glide64 advanced settings</string>
-    <string name="categoryGliden64_title">GlideN64 settings</string>
     <string name="categoryAngrylion_title">Angrylion settings</string>
     <string name="categoryLibrary_title">Library</string>
     <string name="categoryDisplay_title">Display</string>
@@ -210,8 +200,6 @@
     <string name="categoryTouchscreen_title">Touchscreen</string>
     <string name="categoryInput_title">Input</string>
     <string name="categoryData_title">Data</string>
-    <string name="categoryGameSettings_title">Game-specific settings</string>
-    <string name="categoryGameSettings_titleNamed">%1$s settings</string>
 
     <!-- Checkbox Preferences -->
     <string name="playShowCheats_title">Enable cheats</string>
@@ -229,16 +217,6 @@
     <string name="inputMenuMappable_summary">Allow menu key to be mapped to controls, this will force the swipe gesture to be used for the in-game menu</string>
     <string name="displayImmersiveMode_title">Immersive mode</string>
     <string name="displayImmersiveMode_summary">Completely hide navigation and status bars</string>
-    <string name="gln64Fog_title">Fog</string>
-    <string name="gln64Fog_summary">(needs work)</string>
-    <string name="gln64Sai_title">2xSaI texture filter</string>
-    <string name="gln64Sai_summary">Reduces texture pixellation</string>
-    <string name="gln64ScreenClear_title">Force screen clear</string>
-    <string name="gln64ScreenClear_summary">Disable for speed (might cause video glitches)</string>
-    <string name="gln64AlphaTest_title">Alpha test</string>
-    <string name="gln64AlphaTest_summary">Disable for speed (causes black textures)</string>
-    <string name="gln64HackDepth_title">Hack depth coordinates</string>
-    <string name="gln64HackDepth_summary">May fix flashing textures in some games</string>
     <string name="riceAutoFrameskip_title">Auto frameskip</string>
     <string name="riceAutoFrameskip_summary">Improves game speed at cost of framerate</string>
     <string name="riceFastTexture_title">Fast texture loading</string>
@@ -271,7 +249,6 @@
     <string name="touchscreenAutoHold_entryDisabled">Disabled</string>
     <string name="touchscreenAutoHold_entryLongPress">On long-press</string>
     <string name="touchscreenAutoHold_entrySlideOut">On slide-off</string>
-    <string name="touchscreenAnimation_title">Visual feedback</string>
     <string name="touchscreenAnimation_summary">Animate joystick</string>
     <string name="touchscreenInvertTouchXAxis_summary">Invert X axis</string>
     <string name="touchscreenInvertTouchYAxis_summary">Invert Y axis</string>
@@ -287,10 +264,6 @@
     <string name="displayOrientation_entryPortrait">Portrait</string>
     <string name="displayOrientation_entryReversePortrait">Reverse portrait</string>
     <string name="displayOrientation_entryAuto">Auto</string>
-    <string name="displayPosition_title">Vertical screen position</string>
-    <string name="displayPosition_entryBottom">Bottom</string>
-    <string name="displayPosition_entryMiddle">Middle</string>
-    <string name="displayPosition_entryTop">Top</string>
     <string name="displayResolution_title">Rendered resolution</string>
     <string name="displayResolution_entryNative">Native (highest quality)</string>
     <string name="displayResolution_entry960x720">960 x 720</string>
@@ -301,9 +274,6 @@
     <string name="displayResolution_entry160x120">160 x 120 (highest framerate)</string>
     <string name="displayScaling_title">Screen scaling</string>
     <string name="displayScaling_entryOriginal">Original\n<small>Fill screen, no distortion (adds black bars)</small></string>
-    <string name="displayScaling_entryNone">None\n<small>Use exact resolution selected above</small></string>
-    <string name="displayScaling_entryZoom">Zoom\n<small>Fill screen, no distortion (adds black bars)</small></string>
-    <string name="displayScaling_entryCrop">Crop\n<small>Fill screen, no distortion (cuts off graphics)</small></string>
     <string name="displayScaling_entryStretch">Stretch\n<small>Fill screen, no black bars (adds distortion)</small></string>
     <string name="displayFps_title">Framerate</string>
     <string name="displayFps_entryOff">Off</string>
@@ -317,7 +287,6 @@
     <string name="fix_GLideN64_summary">Fixes issues with some devices that show an upside down screen with GLideN64</string>
     <string name="videoPlugin_title">Video plugin</string>
     <string name="videoPlugin_entryNone">None (video disabled)</string>
-    <string name="videoPlugin_entryGln64">gln64\n<small>(adaptation of GLN64 v0.4.1)</small></string>
     <string name="videoPlugin_entryRice">rice\n<small>(adaptation of Rice Video v6.1.0(b))</small></string>
     <string name="videoPlugin_entryAngrylion">angrylion\n<small>(angrylion software renderer)</small></string>
     <string name="videoPlugin_entryGlide64">glide64\n<small>(adaptation of Glide64 Final (10th Anniversary))</small></string>
@@ -334,18 +303,17 @@
     <string name="videoHardwareType_entryCustom">Custom profile</string>
     <string name="videoPolygonOffset_title">Polygon offset</string>
     <string name="videoPolygonOffset_summary">Custom flicker reduction bias</string>
-    <string name="gln64Frameskip_title">Frameskip</string>
-    <string name="gln64Frameskip_entryNever">Never skip frames</string>
-    <string name="gln64Frameskip_entryUpTo1">No more than 1 frame</string>
-    <string name="gln64Frameskip_entryUpTo2">No more than 2 frames</string>
-    <string name="gln64Frameskip_entryUpTo3">No more than 3 frames</string>
-    <string name="gln64Frameskip_entryUpTo4">No more than 4 frames</string>
-    <string name="gln64Frameskip_entryUpTo5">No more than 5 frames</string>
-    <string name="gln64Frameskip_entryExactly1">Exactly 1 frame</string>
-    <string name="gln64Frameskip_entryExactly2">Exactly 2 frames</string>
-    <string name="gln64Frameskip_entryExactly3">Exactly 3 frames</string>
-    <string name="gln64Frameskip_entryExactly4">Exactly 4 frames</string>
-    <string name="gln64Frameskip_entryExactly5">Exactly 5 frames</string>
+    <string name="glide64Frameskip_entryNever">Never skip frames</string>
+    <string name="glide64Frameskip_entryUpTo1">No more than 1 frame</string>
+    <string name="glide64Frameskip_entryUpTo2">No more than 2 frames</string>
+    <string name="glide64Frameskip_entryUpTo3">No more than 3 frames</string>
+    <string name="glide64Frameskip_entryUpTo4">No more than 4 frames</string>
+    <string name="glide64Frameskip_entryUpTo5">No more than 5 frames</string>
+    <string name="glide64Frameskip_entryExactly1">Exactly 1 frame</string>
+    <string name="glide64Frameskip_entryExactly2">Exactly 2 frames</string>
+    <string name="glide64Frameskip_entryExactly3">Exactly 3 frames</string>
+    <string name="glide64Frameskip_entryExactly4">Exactly 4 frames</string>
+    <string name="glide64Frameskip_entryExactly5">Exactly 5 frames</string>
     <string name="riceScreenUpdate_title">Screen update method</string>
     <string name="riceScreenUpdate_entryRomDefault">ROM default</string>
     <string name="riceScreenUpdate_entryVIOriginUpdate">VI origin update</string>
@@ -373,8 +341,6 @@
     <string name="gliden64_multisampling_entry_none">Off</string>
     <string name="gliden64_multisampling_entry_two">2</string>
     <string name="gliden64_multisampling_entry_four">4</string>
-    <string name="gliden64_multisampling_entry_eight">8</string>
-    <string name="gliden64_multisampling_entry_sixteen">16</string>
     <string name="gliden64_bilinear_mode_title">Bilinear filtering mode</string>
     <string name="gliden64_bilinear_mode_entry_n64_3point">N64 3-point</string>
     <string name="gliden64_bilinear_mode_entry_standard">Standard</string>
@@ -408,7 +374,6 @@
     <string name="gliden64_enable_copy_auxiliary_to_RDRAM_title">Enable copy auxiliary buffers to RDRAM</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_title">Copy depth buffer to RDRAM</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_entry_off">Do not copy</string>
-    <string name="gliden64_enable_copy_depth_to_RDRAM_entry_hardware">Hardware renderer</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_entry_software">Software renderer</string>
     <string name="gliden64_enable_color_buffer_from_RDRAM_title">Enable color buffer copy from RDRAM</string>
     <string name="gliden64_enable_n64_depth_compare_title">Enable N64 depth compare (Experimental)</string>
@@ -501,7 +466,6 @@
     <string name="glide64mk2_stipple_mode_disable">Disable</string>
     <string name="glide64mk2_stipple_mode_pattern">Pattern</string>
     <string name="glide64mk2_stipple_mode_rotate">Rotate</string>
-    <string name="glide64mk2_stipple_pattern_title">3DFX Dithered alpha pattern</string>
     <string name="glide64mk2_clip_zmax_title">Enable far plane clipping</string>
     <string name="glide64mk2_clip_zmin_title">Enable near z clipping</string>
     <string name="glide64mk2_adjust_aspect_title">Adjust screen aspect for wide screen mode</string>
@@ -569,9 +533,6 @@
     <!-- '~' indicates rel path & use storage dir if path doesn't exist -->
     <!-- '!' indicates rel path & create parent dirs if path doesn't exist -->
     <string name="pathPreference_dialogTitle">Selected folder: %1$s</string>
-    <string name="pathHiResTextures_title">Import texture pack</string>
-    <string name="pathHiResTextures_summary">Apply custom textures (ZIP format) to a game</string>
-    <string name="pathHiResTextures_default">~</string>
     <string name="pathGameSaves_title">Game save folder</string>
     <string name="pathAppData_title">App data folder</string>
 
@@ -587,7 +548,6 @@
     <!-- Profile Preferences -->
     <string name="emulationProfile_title">Emulation profile</string>
     <string name="touchscreenProfile_title">Touchscreen profile</string>
-    <string name="controllerProfile_title">Controller profile</string>
     <string name="controllerProfile1_title">Controller 1 profile</string>
     <string name="controllerProfile2_title">Controller 2 profile</string>
     <string name="controllerProfile3_title">Controller 3 profile</string>
@@ -617,8 +577,6 @@
     <string name="confirmRemoveFromLibrary_message">Are you sure you want to remove this game from the library?</string>
 
     <!-- Corrupt Installation Warning -->
-    <string name="invalidInstall_title">Warning</string>
-    <string name="invalidInstall_message">Mupen64 Plus AE might not have installed properly. Please try reinstalling the app if you experience any crashes.</string>
 
     <!-- Text Editor Hints (start lower-case) -->
     <string name="hintFileSave">filename</string>
@@ -643,18 +601,13 @@
     
     <!-- Cheat Editor -->
     <string name="menuItem_cheatEditor">Cheat editor</string>
-    <string name="cheatEditor_edit">Edit cheats</string>
-    <string name="cheatEditor_help">Help</string>
     <string name="cheatEditor_confirm">Are you sure?</string>
-    <string name="cheatEditor_info">Cheat information</string>
-    <string name="cheatEditor_saveConfirm">Save cheat file?</string>
     <string name="cheatEditor_edit1">Edit cheat</string>
     <string name="cheatEditor_edit2">Advanced edit cheat</string>
     <string name="cheatEditor_invalid_value">N/A</string>
     <string name="cheatEditor_delete">Delete cheat</string>
     <string name="cheatEditor_add">Add cheat</string>
     <string name="cheatEditor_add_advanced">Add advanced cheat</string>
-    <string name="cheatEditor_save">Save cheat</string>
     <string name="cheatEditor_hint_cheatTitle">Cheat Title</string>
     <string name="cheatEditor_hint_cheatNotes">Cheat Notes (optional)</string>
     <string name="cheatEditor_hint_cheatAddress">Address</string>
@@ -669,7 +622,6 @@
     <!-- Hi-Res Texture Unpacking -->
     <string name="pathHiResTexturesTask_select_zip">Select the ZIP or HTC file containing the high resolution texture pack</string>
     <string name="pathHiResTexturesTask_title">Unpacking textures…</string>
-    <string name="pathHiResTexturesTask_message">Please be patient.  This process may take some time.</string>
     <string name="pathHiResTexturesTask_errorMessage">Problem unpacking textures!</string>
     <string name="pathHiResTexturesTask_errorMessageInvalidHTC">Error: HTC file must match this format [GAME_HEADER]__HIRESTEXTURES.htc</string>
 
@@ -683,8 +635,6 @@
 
     <!-- ROM unzipping -->
     <string name="extractRomTask_title">Extracting ROM…</string>
-    <string name="extractRomTask_message">Extracting ROM image</string>
-    <string name="extractRomTask_errorMessage">Problem extracting ROM image</string>
 
     <!-- ROM Scanning -->
     <string name="scanning_title">Scanning…</string>
@@ -751,7 +701,6 @@
     <string name="controller_buttonZ">Z button</string>
     <string name="controller_buttonS">Start button</string>
     <string name="controller_buttonSensor">Toggle sensor button</string>
-    <string name="controller_fps">FPS indicator</string>
 
     <!-- Input Mapping -->
     <string name="inputMapActivity_popupMessage">Press a button, key, or joystick to map…\n\nCurrent mappings:\n%1$s</string>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="abc_action_bar_home_description">转到主屏幕</string>
-    <string name="abc_action_bar_home_description_format">%1$s：%2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s - %2$s：%3$s</string>
     <string name="abc_action_bar_up_description">转到上一层级</string>
     <string name="abc_action_menu_overflow_description">更多选项</string>
     <string name="abc_action_mode_done">完成</string>
@@ -51,19 +49,12 @@
     <string name="categoryCheats_title">作弊选项（长按注释）</string>
     <string name="categoryData_title">数据</string>
     <string name="categoryDisplay_title">显示</string>
-    <string name="categoryGameSettings_title">游戏具体设置</string>
-    <string name="categoryGameSettings_titleNamed">%1$s 设置</string>
     <string name="categoryGlide64_title">Glide64 设置</string>
-    <string name="categoryGln64_title">Gln64 设置</string>
     <string name="categoryInput_title">输入</string>
     <string name="categoryRice_title">Rice 设置</string>
     <string name="categoryTouchscreen_title">触屏</string>
     <string name="cheatEditor_confirm">是否确定？</string>
     <string name="cheatEditor_delete">删除作弊</string>
-    <string name="cheatEditor_edit">编辑作弊</string>
-    <string name="cheatEditor_help">帮助</string>
-    <string name="cheatEditor_info">作弊信息</string>
-    <string name="cheatEditor_saveConfirm">保存作弊文件吗？</string>
     <string name="cheatNotes_none">（没有可用于此作弊的注释）</string>
     <string name="cheatNotes_title">注释</string>
     <string name="cheatOption_title">全文</string>
@@ -76,7 +67,6 @@
     <string name="controllerProfile2_title">控制器 2 配置</string>
     <string name="controllerProfile3_title">控制器 3 配置</string>
     <string name="controllerProfile4_title">控制器 4 配置</string>
-    <string name="controllerProfile_title">控制器配置</string>
     <string name="controller_buttonA">A 按钮</string>
     <string name="controller_buttonB">B 按钮</string>
     <string name="controller_buttonCr">C-pad →</string>
@@ -93,10 +83,6 @@
     <string name="displayOrientation_entryReverseLandscape">横屏翻转</string>
     <string name="displayOrientation_entryReversePortrait">竖屏翻转</string>
     <string name="displayOrientation_title">屏幕方向</string>
-    <string name="displayPosition_entryBottom">底部</string>
-    <string name="displayPosition_entryMiddle">中间</string>
-    <string name="displayPosition_entryTop">顶部</string>
-    <string name="displayPosition_title">竖屏位置</string>
     <string name="displayResolution_entry160x120">160 x 120（最高帧率）</string>
     <string name="displayResolution_entry320x240">320 x 240</string>
     <string name="displayResolution_entry480x360">480 x 360</string>
@@ -107,26 +93,16 @@
     <string name="displayResolution_title">渲染分辨率</string>
     <string name="displayScaling_title">屏幕缩放</string>
     <string name="emulationProfile_title">模拟配置文件</string>
-    <string name="gln64AlphaTest_summary">禁用速度（导致黑色纹理）</string>
-    <string name="gln64AlphaTest_title">内部测试</string>
-    <string name="gln64Fog_summary">（需要运行）</string>
-    <string name="gln64Fog_title">模糊</string>
-    <string name="gln64Frameskip_entryExactly1">精确 1 帧</string>
-    <string name="gln64Frameskip_entryExactly2">精确 2 帧</string>
-    <string name="gln64Frameskip_entryExactly3">精确 3 帧</string>
-    <string name="gln64Frameskip_entryExactly4">精确 4 帧</string>
-    <string name="gln64Frameskip_entryExactly5">精确 5 帧</string>
-    <string name="gln64Frameskip_entryUpTo1">不超过 1 帧</string>
-    <string name="gln64Frameskip_entryUpTo2">不超过 2 帧</string>
-    <string name="gln64Frameskip_entryUpTo3">不超过 3 帧</string>
-    <string name="gln64Frameskip_entryUpTo4">不超过 4 帧</string>
-    <string name="gln64Frameskip_entryUpTo5">不超过 5 帧</string>
-    <string name="gln64HackDepth_summary">可以修复一些游戏的纹理闪烁</string>
-    <string name="gln64HackDepth_title">Hack 深度坐标</string>
-    <string name="gln64Sai_summary">减少纹理像素化</string>
-    <string name="gln64Sai_title">2xSaI 纹理过滤</string>
-    <string name="gln64ScreenClear_summary">禁用速度（可能会导致视频故障）</string>
-    <string name="gln64ScreenClear_title">强制画面清晰</string>
+    <string name="glide64Frameskip_entryExactly1">精确 1 帧</string>
+    <string name="glide64Frameskip_entryExactly2">精确 2 帧</string>
+    <string name="glide64Frameskip_entryExactly3">精确 3 帧</string>
+    <string name="glide64Frameskip_entryExactly4">精确 4 帧</string>
+    <string name="glide64Frameskip_entryExactly5">精确 5 帧</string>
+    <string name="glide64Frameskip_entryUpTo1">不超过 1 帧</string>
+    <string name="glide64Frameskip_entryUpTo2">不超过 2 帧</string>
+    <string name="glide64Frameskip_entryUpTo3">不超过 3 帧</string>
+    <string name="glide64Frameskip_entryUpTo4">不超过 4 帧</string>
+    <string name="glide64Frameskip_entryUpTo5">不超过 5 帧</string>
     <string name="hintFileSave">文件名</string>
     <string name="hint_profileComment">说明（可选）</string>
     <string name="hint_profileName">配置文件名称</string>
@@ -152,7 +128,6 @@
     <string name="inputShareController_title">共享控制器</string>
     <string name="inputVolumeMappable_summary">允许音量键被映射到控制</string>
     <string name="inputVolumeMappable_title">可映射音量键</string>
-    <string name="invalidInstall_title">注意</string>
     <string name="listItem_copy">复制</string>
     <string name="listItem_delete">删除</string>
     <string name="listItem_disabled">（禁用）</string>
@@ -167,7 +142,6 @@
     <string name="menuItem_controllerDiagnostics">控制器诊断</string>
     <string name="menuItem_controllerProfiles">控制器配置</string>
     <string name="menuItem_credits">成就</string>
-    <string name="menuItem_customCheats">自定义作弊</string>
     <string name="menuItem_deadzone">盲区</string>
     <string name="menuItem_disableFramelimiter">不同步音频</string>
     <string name="menuItem_emulationProfiles">模拟配置</string>
@@ -203,7 +177,6 @@
     <string name="navigationMode_entryStandard">标准模式</string>
     <string name="pathGameSaves_title">游戏保存文件夹</string>
     <string name="pathHiResTexturesTask_title">打开纹理...</string>
-    <string name="pathHiResTextures_default">~</string>
     <string name="pathPreference_parentFolder">父文件夹</string>
     <string name="playShowCheats_title">启用作弊</string>
     <string name="playerMapPreference_popupTitle">玩家 %1$d</string>
@@ -253,14 +226,10 @@
     <string name="screenCheats_summaryDisabled">禁用</string>
     <string name="screenCheats_summaryEnabled">启用</string>
     <string name="screenCheats_title">作弊</string>
-    <string name="screenGlobalSettings_summary">显示、音频、存储和调试设置</string>
-    <string name="screenGlobalSettings_title">全局设置</string>
     <string name="seekBarPreference_summary">%1$d %2$s</string>
     <string name="toast_canceling">取消...</string>
     <string name="toast_launchingEmulator">启动模拟器...</string>
     <string name="toast_loadingFile">正在加载 %1$s...</string>
-    <string name="toast_loadingGameInfo">正在加载游戏信息...</string>
-    <string name="toast_loadingSession">自动恢复游戏...</string>
     <string name="toast_loadingSlot">正在加载插槽 %1$d...</string>
     <string name="toast_nativeMainFailure01">无法解析初始命令行参数。</string>
     <string name="toast_nativeMainFailure02">无法连接核心库。</string>
@@ -278,13 +247,10 @@
     <string name="toast_nativeMainFailureUnknown">未知的启动错误。</string>
     <string name="toast_overwritingFile">覆盖 %1$s...</string>
     <string name="toast_pleaseWait">请稍候...</string>
-    <string name="toast_rebuildingCheats">重建作弊数据库...</string>
     <string name="toast_savingFile">保存 %1$s...</string>
     <string name="toast_savingScreenshot">保存截图...</string>
-    <string name="toast_savingSession">自动保存游戏...</string>
     <string name="toast_savingSlot">保存插槽 %1$d...</string>
     <string name="toast_sdInaccessible">应用数据丢失，尝试重新加载。</string>
-    <string name="toast_usingSlot">目前使用插槽 %1$d。</string>
     <string name="touchscreenAutoHold_entryDisabled">禁用</string>
     <string name="touchscreenAutoHold_entryLongPress">长按</string>
     <string name="touchscreenAutoHold_title">按钮自动保持</string>
@@ -314,8 +280,8 @@
     <string name="diagnosticActivity_textMotion_text">触屏或操纵杆...</string>
     <string name="displayActionBarTransparency_title">操作栏透明度</string>
     <string name="displayImmersiveMode_title">沉浸模式</string>
-    <string name="gln64Frameskip_entryNever">不跳帧</string>
-    <string name="gln64Frameskip_title">跳帧</string>
+    <string name="glide64Frameskip_entryNever">不跳帧</string>
+    <string name="glide64Frameskip_title">跳帧</string>
     <string name="inputMapActivity_btnCD">C-pad ↓</string>
     <string name="inputMapActivity_btnCL">C-pad ←</string>
     <string name="inputMapActivity_btnCU">C-pad ↑</string>
@@ -330,15 +296,11 @@
     <string name="inputMapActivity_popupUnmap">取消映射</string>
     <string name="inputMapActivity_simulateBack">返回键</string>
     <string name="inputShareController_summary">允许单个设备同时控制多个玩家</string>
-    <string name="invalidInstall_message">Mupen64 Plus AE 可能未正确安装。如果你遇到任何崩溃，请尝试重新安装该应用程序。</string>
     <string name="navigationMode_entryAuto">从设备配置中自动选择</string>
     <string name="navigationMode_entryBigScreen">大屏模式（无触摸屏;仅限游戏手柄/键盘输入）</string>
     <string name="navigationMode_summary">菜单导航模式：%1$s</string>
     <string name="navigationMode_title">辅助功能</string>
     <string name="pathHiResTexturesTask_errorMessage">打开纹理问题！</string>
-    <string name="pathHiResTexturesTask_message">请耐心等待。此过程可能需要一些时间。</string>
-    <string name="pathHiResTextures_summary">应用自定义纹理（ZIP格式）到游戏</string>
-    <string name="pathHiResTextures_title">导入纹理包</string>
     <string name="pathPreference_dialogTitle">所选文件夹：%1$s</string>
     <string name="playerMapPreference_popupUnmap">取消映射</string>
     <string name="playerMapPreference_reminder">每当玩家未映射时，提醒我</string>
@@ -377,16 +339,9 @@
     <string name="confirmDeleteProfile_message">删除配置 \"%1$s\"？</string>
     <string name="controller_analog">模拟摇杆</string>
     <string name="controller_dpad">方向键</string>
-    <string name="controller_fps">FPS 指示器</string>
     <string name="displayFps_title">帧率</string>
-    <string name="displayScaling_entryCrop">"修剪
-"<small>填充屏幕，不失真（切断图形）</small></string>
-    <string name="displayScaling_entryNone">"无
-"<small>使用上面所选的精确分辨率</small></string>
     <string name="displayScaling_entryStretch">"拉伸
 "<small>填充屏幕，无黑条（增加失真）</small></string>
-    <string name="displayScaling_entryZoom">"缩放
-"<small>填充屏幕，不失真（添加黑条）</small></string>
     <string name="inputMapActivity_popupMessage">"按下任意按钮，键或操纵杆以映射..
 
 
@@ -404,7 +359,6 @@
     <string name="scanRomsDialog_searchZips">搜索 zip 文件</string>
     <string name="scanRomsDialog_selectRom">选择要扫描的ROM文件或整个文件夹 (支持 zip/n64/z64 文件)</string>
     <string name="touchscreenAnimation_summary">操纵杆动画</string>
-    <string name="touchscreenAnimation_title">视觉反馈</string>
     <string name="touchscreenProfileActivity_autoHoldable">自动保持</string>
     <string name="touchscreenProfileActivity_buttons">按钮</string>
     <string name="touchscreenProfileActivity_horizontalSlider">水平：%1$d %%</string>
@@ -412,8 +366,6 @@
     <string name="videoHardwareType_entryDisableHack">禁用闪烁减少 hack</string>
     <string name="videoPlugin_entryGlide64">"glide64
 "<small>(适配 Glide64 最终版 (十周年纪念))</small></string>
-    <string name="videoPlugin_entryGln64">"gln64
-"<small>(适配 GLN64 v0.4.1)</small></string>
     <string name="videoPlugin_entryRice">"rice
 "<small>(适配 Rice 视频 v6.1.0(b))</small></string>
     <string name="GameAutoSavesMax_title">每个游戏的最大自动保存</string>
@@ -435,7 +387,6 @@
     <string name="audioSLESTimeStretch_title">时间段音频</string>
     <string name="cacheRecentlyPlayed_summary">为更快的加载速度，提取最近玩过的游戏 ROM 文件缓存</string>
     <string name="cacheRecentlyPlayed_title">最近的游戏缓存</string>
-    <string name="categoryGliden64_title">GlideN64 设置</string>
     <string name="categoryLibrary_title">库</string>
     <string name="confirmClearData_message">您确定要清除所有已安装的高分辨率纹理包和高速缓存吗？</string>
     <string name="confirmExitGame_message">您确定要停止运行吗？</string>
@@ -451,10 +402,6 @@
     <string name="displayFps_entryTopRight">右上方</string>
     <string name="fix_GLideN64_summary">修复了一些设备屏幕显示上下颠倒与 GLideN64 的问题</string>
     <string name="fix_GLideN64_title">修复屏幕倒置</string>
-    <string name="galleryDonateDialogTitle">赞助开发人员</string>
-    <string name="galleryDonationError">处理错误</string>
-    <string name="galleryDonationThankYou">谢谢！</string>
-    <string name="galleryDonationValueNotAvailable">不可用</string>
     <string name="galleryLibrary">库</string>
     <string name="galleryRecentlyPlayed">最近游戏</string>
     <string name="gliden64_bilinear_mode_entry_n64_3point">N64 3-点</string>
@@ -478,7 +425,6 @@
     <string name="gliden64_cropmode_title">裁剪模式</string>
     <string name="gliden64_enable_color_buffer_from_RDRAM_title">启用颜色缓冲区复制从 RDRAM</string>
     <string name="gliden64_enable_copy_auxiliary_to_RDRAM_title">启用复制辅助缓冲区到 RDRAM</string>
-    <string name="gliden64_enable_copy_depth_to_RDRAM_entry_hardware">硬件渲染器</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_entry_off">不复制</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_entry_software">软件渲染器</string>
     <string name="gliden64_enable_copy_depth_to_RDRAM_title">复制深度缓冲区到 RDRAM</string>
@@ -497,10 +443,8 @@
     <string name="gliden64_force_gamma_correction_title">强制伽玛校正</string>
     <string name="gliden64_gamma_correction_level">伽玛校正值</string>
     <string name="gliden64_max_anisotropic_filtering_title">各向异性过滤最高水平</string>
-    <string name="gliden64_multisampling_entry_eight">8</string>
     <string name="gliden64_multisampling_entry_four">4</string>
     <string name="gliden64_multisampling_entry_none">关闭</string>
-    <string name="gliden64_multisampling_entry_sixteen">16</string>
     <string name="gliden64_multisampling_entry_two">2</string>
     <string name="gliden64_multisampling_title">多重采样水平</string>
     <string name="gliden64_swap_frame_buffers_entry_on_buffer_update">在缓冲区更新</string>
@@ -557,7 +501,6 @@
     <string name="menuItem_Clear">清除纹理包/缓存</string>
     <string name="menuItem_Extract">添加纹理包</string>
     <string name="menuItem_Tools">工具</string>
-    <string name="menuItem_donate">赞助开发人员</string>
     <string name="menuItem_fileLoadAutoSave">从自动保存加载...</string>
     <string name="menuItem_player_four">玩家 4</string>
     <string name="menuItem_player_one">玩家 1</string>
@@ -617,7 +560,6 @@
     <string name="cheatEditor_hint_value_description">说明</string>
     <string name="cheatEditor_invalid_value">N/A</string>
     <string name="cheatEditor_remove_option">删除选项</string>
-    <string name="cheatEditor_save">保存作弊</string>
     <string name="displayScaling_entryOriginal">"原始
 "<small>填充屏幕，不失真（添加黑条）</small></string>
     <string name="displayZoom_title">缩放</string>

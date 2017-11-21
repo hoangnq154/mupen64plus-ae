@@ -34,8 +34,7 @@
   <string name="menuItem_emulationProfiles">Perfís de emulación</string>
   <string name="menuItem_touchscreenProfiles">Perfís da pantalla táctil</string>
   <string name="menuItem_controllerProfiles">Perfís do controlador</string>
-  <string name="menuItem_customCheats">Trucos propios</string>
-  <string name="menuItem_help">Axuda</string>
+    <string name="menuItem_help">Axuda</string>
   <string name="menuItem_faq">Preguntas habituais</string>
   <string name="menuItem_helpForum">Foro de axuda</string>
   <string name="menuItem_controllerDiagnostics">Diagnose do mando</string>
@@ -70,19 +69,14 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Reconstruír base de datos de trucos</string>
-  <string name="toast_launchingEmulator">Executando emulador…</string>
-  <string name="toast_loadingSession">Reanudar auto. xogo…</string>
-  <string name="toast_savingSession">Gardar auto. xogo…</string>
-  <string name="toast_loadingSlot">Cargando rañura %1$d…</string>
+    <string name="toast_launchingEmulator">Executando emulador…</string>
+    <string name="toast_loadingSlot">Cargando rañura %1$d…</string>
   <string name="toast_savingSlot">Gardando rañura %1$d…</string>
   <string name="toast_loadingFile">Cargando %1$s…</string>
   <string name="toast_savingFile">Gardando %1$s…</string>
   <string name="toast_overwritingFile">Sobrescribindo %1$s…</string>
-  <string name="toast_loadingGameInfo">Cargando información do xogo...</string>
-  <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">Usando a rañura %1$d.</string>
-  <string name="toast_sdInaccessible">Non se pode acceder á SD (desconecte o cable USB e probe de novo)</string>
+    <!--Something happened (use '.')-->
+    <string name="toast_sdInaccessible">Non se pode acceder á SD (desconecte o cable USB e probe de novo)</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -99,24 +93,19 @@
   <string name="actionCheatEditor_summary">Engadir, modificar e eliminar trucos propios</string>
   <string name="actionShare_title">Compartir</string>
   <!--Preference Screens-->
-  <string name="screenGlobalSettings_title">Axustes globais</string>
-  <string name="screenGlobalSettings_summary">Axustes de pantalla, son, almacenamento e depuración</string>
-  <string name="screenCheats_title">Trucos</string>
+    <string name="screenCheats_title">Trucos</string>
   <string name="screenCheats_summaryEnabled">Activado</string>
   <string name="screenCheats_summaryDisabled">Desactivado</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Opcións de trucos (presión longa para notas)</string>
-  <string name="categoryGln64_title">Axustes do Gln64</string>
-  <string name="categoryRice_title">Axustes do Rice</string>
+    <string name="categoryRice_title">Axustes do Rice</string>
   <string name="categoryGlide64_title">Axustes do Glide64</string>
   <string name="categoryDisplay_title">Amosar</string>
   <string name="categoryAudio_title">Son</string>
   <string name="categoryTouchscreen_title">Pantalla táctil</string>
   <string name="categoryInput_title">Entrada</string>
   <string name="categoryData_title">Datos</string>
-  <string name="categoryGameSettings_title">Axustes específicos do xogo</string>
-  <string name="categoryGameSettings_titleNamed">Axustes de %1$s</string>
-  <!--Checkbox Preferences-->
+    <!--Checkbox Preferences-->
   <string name="playShowCheats_title">Activar trucos</string>
   <string name="touchscreenFeedback_title">Resposta táctil</string>
   <string name="touchscreenFeedback_summary">Vibrar ao premer o botón</string>
@@ -126,15 +115,7 @@
   <string name="inputShareController_summary">Permite que un único dispositivo controle múltiples xogadores ao mesmo tempo</string>
   <string name="displayImmersiveMode_title">Modo imersivo</string>
   <string name="displayImmersiveMode_summary">Agochar por completo barras de navegaciópn e estado</string>
-  <string name="gln64Fog_title">Néboa</string>
-  <string name="gln64Fog_summary">(en desenvolvemento)</string>
-  <string name="gln64Sai_title">Filtro de textura 2xSaI</string>
-  <string name="gln64Sai_summary">Reduce a pixelación da textura</string>
-  <string name="gln64ScreenClear_title">Forzar limpeza de pantalla</string>
-  <string name="gln64ScreenClear_summary">Desactivar para velocidade (pode causar erros de vídeo)</string>
-  <string name="gln64AlphaTest_title">Proba alfa</string>
-  <string name="gln64AlphaTest_summary">Desactivar para velocidade (causa texturas en negro)</string>
-  <string name="riceAutoFrameskip_title">Salto de cadros auto.</string>
+    <string name="riceAutoFrameskip_title">Salto de cadros auto.</string>
   <string name="riceAutoFrameskip_summary">Mellora a velocidade de xogo a custo da velocidade de cadros</string>
   <string name="riceFastTexture_title">Carga rápida de textura</string>
   <string name="riceFastTexture_summary">Corrixe transicións redundantes</string>
@@ -160,11 +141,7 @@
   <string name="displayOrientation_entryReverseLandscape">Horizontal inversa</string>
   <string name="displayOrientation_entryPortrait">Vertical</string>
   <string name="displayOrientation_entryReversePortrait">Vertical inversa</string>
-  <string name="displayPosition_title">Posición da pantalla vertical</string>
-  <string name="displayPosition_entryBottom">Abaixo</string>
-  <string name="displayPosition_entryMiddle">Medio</string>
-  <string name="displayPosition_entryTop">Arriba</string>
-  <string name="displayResolution_title">Resolución renderizada</string>
+    <string name="displayResolution_title">Resolución renderizada</string>
   <string name="displayResolution_entryNative">Nativo (mellor calidade)</string>
   <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
@@ -186,18 +163,18 @@
   <string name="videoHardwareType_entryCustom">Perfil personalizado</string>
   <string name="videoPolygonOffset_title">Desprazamento de polígonos</string>
   <string name="videoPolygonOffset_summary">Redución de escintileo personalizada</string>
-  <string name="gln64Frameskip_title">Salto de cadro</string>
-  <string name="gln64Frameskip_entryNever">Nunca saltar cadros</string>
-  <string name="gln64Frameskip_entryUpTo1">Non máis de 1 cadro</string>
-  <string name="gln64Frameskip_entryUpTo2">Non máis de 2 cadros</string>
-  <string name="gln64Frameskip_entryUpTo3">Non máis de 3 cadros</string>
-  <string name="gln64Frameskip_entryUpTo4">Non máis de 4 cadros</string>
-  <string name="gln64Frameskip_entryUpTo5">Non máis de 5 cadros</string>
-  <string name="gln64Frameskip_entryExactly1">Exactamente 1 cadro</string>
-  <string name="gln64Frameskip_entryExactly2">Exactamente 2 cadros</string>
-  <string name="gln64Frameskip_entryExactly3">Exactamente 3 cadros</string>
-  <string name="gln64Frameskip_entryExactly4">Exactamente 4 cadros</string>
-  <string name="gln64Frameskip_entryExactly5">Exactamente 5 cadros</string>
+  <string name="glide64Frameskip_title">Salto de cadro</string>
+  <string name="glide64Frameskip_entryNever">Nunca saltar cadros</string>
+  <string name="glide64Frameskip_entryUpTo1">Non máis de 1 cadro</string>
+  <string name="glide64Frameskip_entryUpTo2">Non máis de 2 cadros</string>
+  <string name="glide64Frameskip_entryUpTo3">Non máis de 3 cadros</string>
+  <string name="glide64Frameskip_entryUpTo4">Non máis de 4 cadros</string>
+  <string name="glide64Frameskip_entryUpTo5">Non máis de 5 cadros</string>
+  <string name="glide64Frameskip_entryExactly1">Exactamente 1 cadro</string>
+  <string name="glide64Frameskip_entryExactly2">Exactamente 2 cadros</string>
+  <string name="glide64Frameskip_entryExactly3">Exactamente 3 cadros</string>
+  <string name="glide64Frameskip_entryExactly4">Exactamente 4 cadros</string>
+  <string name="glide64Frameskip_entryExactly5">Exactamente 5 cadros</string>
   <string name="riceScreenUpdate_title">Método de actualización de pantalla</string>
   <string name="riceScreenUpdate_entryRomDefault">Predefinido da ROM</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">Orixe de actualización VI</string>
@@ -237,18 +214,14 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Cartafol elixido: %1$s</string>
-  <string name="pathHiResTextures_title">Importar paquete de textura</string>
-  <string name="pathHiResTextures_summary">Aplicar texturas propias (formato ZIP) a un xogo</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Cartafol de gardado</string>
+    <string name="pathGameSaves_title">Cartafol de gardado</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Multixogador</string>
   <string name="playerMap_summary">Definir os mandos de cada xogador</string>
   <!--Profile Preferences-->
   <string name="emulationProfile_title">Perfil de emulación</string>
   <string name="touchscreenProfile_title">Perfil da pantalla táctil</string>
-  <string name="controllerProfile_title">Perfil do mando</string>
-  <string name="controllerProfile1_title">Perfil do mando 1</string>
+    <string name="controllerProfile1_title">Perfil do mando 1</string>
   <string name="controllerProfile2_title">Perfil do mando 2</string>
   <string name="controllerProfile3_title">Perfil do mando 3</string>
   <string name="controllerProfile4_title">Perfil do mando 4</string>
@@ -265,9 +238,7 @@
   <string name="confirmDeleteProfile_message">Eliminar perfil \"%1$s\"?</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">Aviso</string>
-  <string name="invalidInstall_message">Mupen64 Plus AE non se instalou correctamente. Por favor, probe a reinstalar a aplicación se sufre crebas.</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">nome do arquivo</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">Iniciando</string>
@@ -282,16 +253,11 @@
   <string name="cheatNotes_none">(non hai notas para este truco)</string>
   <!--Cheat Editor-->
   <string name="menuItem_cheatEditor">Editor de trucos</string>cheatEditor_empty
-  <string name="cheatEditor_edit">Editar trucos</string>
-  <string name="cheatEditor_help">Axuda</string>
-  <string name="cheatEditor_delete">Eliminar truco</string>
+    <string name="cheatEditor_delete">Eliminar truco</string>
   <string name="cheatEditor_confirm">Está seguro?</string>
-  <string name="cheatEditor_info">Información de trucos</string>
-  <string name="cheatEditor_saveConfirm">Gardar arquivo de truco?</string>
-  <!--Hi-Res Texture Unpacking-->
+    <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Desempaquetando texturas</string>
-  <string name="pathHiResTexturesTask_message">Teña paciencia. Este proceso pode levar un tempo.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Problema desempaquetando texturas!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Problema desempaquetando texturas!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->

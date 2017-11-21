@@ -9,7 +9,6 @@
     <string name="actionWiki_title">Wiki</string>
     <string name="assetExtractor_finished">Užbaigta</string>
     <string name="audioPlugin_title">Audio plėtinys</string>
-    <string name="cheatEditor_saveConfirm"></string>
     <string name="controller_buttonL">L mygtukas</string>
     <string name="controller_buttonR">R mygtukas</string>
     <string name="controller_buttonS">Pradžios mygtukas</string>
@@ -43,10 +42,7 @@
     <string name="categoryDisplay_title">Ekranas</string>
     <string name="cheatEditor_confirm">Ar esate tuo tikras?</string>
     <string name="cheatEditor_delete">Ištrinti kodą</string>
-    <string name="cheatEditor_edit">Keisti kodus</string>
-    <string name="cheatEditor_help">Pagalba</string>
     <string name="inputMapActivity_pause">Pauzė</string>
-    <string name="invalidInstall_title">Įspėjimas</string>
     <string name="menuItem_credits">Kreditai</string>
     <string name="menuItem_help">Pagalba</string>
 </resources>

@@ -51,18 +51,14 @@ Controller Paks</string>
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Regenerant base de dades de cheats…</string>
-  <string name="toast_launchingEmulator">Carregant emulador…</string>
-  <string name="toast_loadingSession">Auto-resumint el joc…</string>
-  <string name="toast_savingSession">Auto-guardant el joc…</string>
-  <string name="toast_loadingSlot">Carregant slot %1$d…</string>
+    <string name="toast_launchingEmulator">Carregant emulador…</string>
+    <string name="toast_loadingSlot">Carregant slot %1$d…</string>
   <string name="toast_savingSlot">Guardant slot %1$d…</string>
   <string name="toast_loadingFile">Carregant %1$s…</string>
   <string name="toast_savingFile">Guardant %1$s…</string>
   <string name="toast_overwritingFile">Sobreescrivint  %1$s…</string>
   <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">Uilitzant l\'slot %1$d.</string>
-  <string name="toast_sdInaccessible">La targeta SD no està accessible (desconnecta el cable USB i prova-ho de nou).</string>
+    <string name="toast_sdInaccessible">La targeta SD no està accessible (desconnecta el cable USB i prova-ho de nou).</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -79,8 +75,7 @@ Controller Paks</string>
   <string name="screenCheats_summaryDisabled">Deshabilitat</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Configuració dels cheats (mantingues oprimit per mostrar notes)</string>
-  <string name="categoryGln64_title">Configuració de Gln64</string>
-  <string name="categoryRice_title">Configuració de Rice</string>
+    <string name="categoryRice_title">Configuració de Rice</string>
   <string name="categoryGlide64_title">Configuració de Glide64</string>
   <string name="categoryAudio_title">Àudio</string>
   <string name="categoryTouchscreen_title">Pantalla tàctil</string>
@@ -97,15 +92,7 @@ Habilita cheats</string>
   <string name="inputShareController_summary">Permet que un únic dispositiu d\'entrada controli a diversos jugadors a la vegada</string>
   <string name="displayImmersiveMode_title">Mode de Immersive</string>
   <string name="displayImmersiveMode_summary">Amaga completament la navegació i la barra d\'estat</string>
-  <string name="gln64Fog_title">boira</string>
-  <string name="gln64Fog_summary">(manca treballar-hi)</string>
-  <string name="gln64Sai_title">Filtre de textura 2xSaI</string>
-  <string name="gln64Sai_summary">Redueix la pixelació de les textures</string>
-  <string name="gln64ScreenClear_title">Forçar el netejat de pantalla</string>
-  <string name="gln64ScreenClear_summary">Deshabilita per a una major velocitat (pot causar errors de vídeo)</string>
-  <string name="gln64AlphaTest_title">Test alfa</string>
-  <string name="gln64AlphaTest_summary">Deshabilita per millorar la velocitat (pot causar textures negres)</string>
-  <string name="riceAutoFrameskip_title">Salt de quadres automàtic (frameskip)</string>
+    <string name="riceAutoFrameskip_title">Salt de quadres automàtic (frameskip)</string>
   <string name="riceAutoFrameskip_summary">Millora la velocitat del joc en detriment de la velocitat de quadres (frameskip)</string>
   <string name="riceFastTexture_title">Carrega ràpida de textures</string>
   <string name="riceFastTexture_summary">Corregeix els cercles de transició</string>
@@ -131,11 +118,7 @@ Habilita cheats</string>
   <string name="displayOrientation_entryReverseLandscape">Apaïsat invertit</string>
   <string name="displayOrientation_entryPortrait">Vertical</string>
   <string name="displayOrientation_entryReversePortrait">Vertical invertit</string>
-  <string name="displayPosition_title">Posició vertical de la pantalla</string>
-  <string name="displayPosition_entryBottom">Abaix</string>
-  <string name="displayPosition_entryMiddle">Al mig</string>
-  <string name="displayPosition_entryTop">Adalt</string>
-  <string name="displayResolution_title">Resolució de renderitzat</string>
+    <string name="displayResolution_title">Resolució de renderitzat</string>
   <string name="displayResolution_entryNative">Natiu (la millor qualitat)</string>
   <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
@@ -158,18 +141,18 @@ Perfil T</string>
   <string name="videoHardwareType_entryCustom">Perfil personalitzat</string>
   <string name="videoPolygonOffset_title">Polygon offset</string>
   <string name="videoPolygonOffset_summary">Flicker reduction bias personalitzat</string>
-  <string name="gln64Frameskip_title">Salt de quadres (Frameskip)</string>
-  <string name="gln64Frameskip_entryNever">Mai saltar quadres (frameskip)</string>
-  <string name="gln64Frameskip_entryUpTo1">No més de 1 frame</string>
-  <string name="gln64Frameskip_entryUpTo2">No més de 2 frames</string>
-  <string name="gln64Frameskip_entryUpTo3">No més de 3 frames</string>
-  <string name="gln64Frameskip_entryUpTo4">No més de 4 frames</string>
-  <string name="gln64Frameskip_entryUpTo5">No més de 5 frames</string>
-  <string name="gln64Frameskip_entryExactly1">Exactament 1 frame</string>
-  <string name="gln64Frameskip_entryExactly2">Exactament 2 frames</string>
-  <string name="gln64Frameskip_entryExactly3">Exactament 3 frames</string>
-  <string name="gln64Frameskip_entryExactly4">Exactament 4 frames</string>
-  <string name="gln64Frameskip_entryExactly5">Exactament 5 frames</string>
+  <string name="glide64Frameskip_title">Salt de quadres (Frameskip)</string>
+  <string name="glide64Frameskip_entryNever">Mai saltar quadres (frameskip)</string>
+  <string name="glide64Frameskip_entryUpTo1">No més de 1 frame</string>
+  <string name="glide64Frameskip_entryUpTo2">No més de 2 frames</string>
+  <string name="glide64Frameskip_entryUpTo3">No més de 3 frames</string>
+  <string name="glide64Frameskip_entryUpTo4">No més de 4 frames</string>
+  <string name="glide64Frameskip_entryUpTo5">No més de 5 frames</string>
+  <string name="glide64Frameskip_entryExactly1">Exactament 1 frame</string>
+  <string name="glide64Frameskip_entryExactly2">Exactament 2 frames</string>
+  <string name="glide64Frameskip_entryExactly3">Exactament 3 frames</string>
+  <string name="glide64Frameskip_entryExactly4">Exactament 4 frames</string>
+  <string name="glide64Frameskip_entryExactly5">Exactament 5 frames</string>
   <string name="riceScreenUpdate_title">Mètode de refresc de pantalla</string>
   <string name="riceScreenUpdate_entryRomDefault">ROM per defecte</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">VI </string>
@@ -207,10 +190,7 @@ Perfil T</string>
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Carpeta seleccionada: %1$s</string>
-  <string name="pathHiResTextures_title">Importa un pac de textures</string>
-  <string name="pathHiResTextures_summary">Aplicar textures personalitzades (en format ZIP) a un joc</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Carpeta de partides de joc</string>
+    <string name="pathGameSaves_title">Carpeta de partides de joc</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Multijugador</string>
   <string name="playerMap_summary">Definir controlador de cada jugador</string>
@@ -227,9 +207,7 @@ Perfil T</string>
   <string name="confirmUnmapAll_message">Desassigna tots el controls per a %$1s?</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">Advertència</string>
-  <string name="invalidInstall_message">Probalbement el Mupen64 Plus AE no s\'ha instal·lat correctament. Si experimentes aquest errors reinstal·la la aplicació si us plau.</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">nom de fitxer</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">Inicialitzant</string>
@@ -243,12 +221,10 @@ Perfil T</string>
   <string name="cheatNotes_title">Notes</string>
   <string name="cheatNotes_none">(no hi ha notes disponibles per aquest cheat)</string>
   <!--Cheat Editor-->
-  <string name="cheatEditor_help">Ajuda</string>
-  <string name="cheatEditor_confirm">Està segur?</string>
+    <string name="cheatEditor_confirm">Està segur?</string>
   <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Extraient textures</string>
-  <string name="pathHiResTexturesTask_message">Si us plau, sigues pacient. Aquest proces pot tardar una mica.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Error extraient les textures!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Error extraient les textures!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->

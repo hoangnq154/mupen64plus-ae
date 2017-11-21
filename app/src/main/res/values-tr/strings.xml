@@ -39,8 +39,7 @@
   <string name="menuItem_emulationProfiles">Emülasyon profilleri</string>
   <string name="menuItem_touchscreenProfiles">Dokunmatik ekran profilleri</string>
   <string name="menuItem_controllerProfiles">Kontrol profilleri</string>
-  <string name="menuItem_customCheats">Özel hile</string>
-  <string name="menuItem_help">Yardım</string>
+    <string name="menuItem_help">Yardım</string>
   <string name="menuItem_faq">SSS</string>
   <string name="menuItem_helpForum">Yardim forumu</string>
   <string name="menuItem_controllerDiagnostics">Kumanda tanılama</string>
@@ -79,22 +78,17 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Hile veritabanı tekrar oluşturuluyor…</string>
-  <string name="toast_launchingEmulator">Öykünücü başlatılıyor…</string>
-  <string name="toast_loadingSession">Oyuna otomatik devam ediliyor…</string>
-  <string name="toast_savingSession">Oyun otomatik kaydediliyor…</string>
-  <string name="toast_loadingSlot">%1$d slotu yükleniyor…</string>
+    <string name="toast_launchingEmulator">Öykünücü başlatılıyor…</string>
+    <string name="toast_loadingSlot">%1$d slotu yükleniyor…</string>
   <string name="toast_savingSlot">%1$d slotu kaydediliyor…</string>
   <string name="toast_loadingFile">%1$s yükleniyor…</string>
   <string name="toast_savingFile">%1$s kaydediliyor…</string>
   <string name="toast_overwritingFile">%1$s üzerine yazılıyor…</string>
-  <string name="toast_loadingGameInfo">Oyun bilgisi yükleniyor...</string>
-  <string name="toast_savingScreenshot">Ekran görüntüsü kaydediliyor...</string>
+    <string name="toast_savingScreenshot">Ekran görüntüsü kaydediliyor...</string>
   <string name="toast_canceling">İptal ediliyor...</string>
   <string name="toast_pleaseWait">Lütfen bekleyiniz...</string>
   <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">Şimdi %1$d soltu kullanılıyor</string>
-  <string name="toast_sdInaccessible">SD kart erişilemez (USB kablosunu çıkartıp tekrar deneyin)</string>
+    <string name="toast_sdInaccessible">SD kart erişilemez (USB kablosunu çıkartıp tekrar deneyin)</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -113,12 +107,10 @@
   <string name="actionResetGamePrefs_summary">Varsayılan ayarları geri yükle</string>
   <string name="actionShare_title">Paylaş</string>
   <!--Preference Screens-->
-  <string name="screenGlobalSettings_title">Genel ayarlar</string>
-  <string name="screenCheats_summaryDisabled">Devre dışı</string>
+    <string name="screenCheats_summaryDisabled">Devre dışı</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Hile seçenekleri (notlar için uzun basın)</string>
-  <string name="categoryGln64_title">Gln64 Ayarları</string>
-  <string name="categoryRice_title">Rice Ayarları</string>
+    <string name="categoryRice_title">Rice Ayarları</string>
   <string name="categoryGlide64_title">Glide64 ayarları</string>
   <string name="categoryAudio_title">Ses</string>
   <string name="categoryTouchscreen_title">Dokunmatik Ekran</string>
@@ -132,15 +124,7 @@
   <string name="inputVolumeMappable_summary">Ses tuşlarının denetimler için haritalanmasına izin ver</string>
   <string name="inputShareController_title">Kumandayı paylaş</string>
   <string name="inputShareController_summary">Tek bir girdi aygıtının aynı anda birden fazla oyuncuyu kontrol etmesine izin ver</string>
-  <string name="gln64Fog_title">Sis</string>
-  <string name="gln64Fog_summary">(çalışılması gerekiliyor)</string>
-  <string name="gln64Sai_title">2xSal doku filtresi</string>
-  <string name="gln64Sai_summary">Doku kareliğini azaltır</string>
-  <string name="gln64ScreenClear_title">Ekranı temiz tutmaya zorla</string>
-  <string name="gln64ScreenClear_summary">Performans için pasifleştirin (video sorunlarına yol açabilir)</string>
-  <string name="gln64AlphaTest_title">Alfa testi</string>
-  <string name="gln64AlphaTest_summary">Performans için pasifleştirin (siyah dokulara neden olur)</string>
-  <string name="riceAutoFrameskip_title">Otomatik kare atlama</string>
+    <string name="riceAutoFrameskip_title">Otomatik kare atlama</string>
   <string name="riceAutoFrameskip_summary">Kare sayısı pahasına oyun hızını iyileştirir</string>
   <string name="riceFastTexture_title">Hızlı doku yükleme</string>
   <string name="riceFastTexture_summary">Dairesel geçişleri düzeltir</string>
@@ -165,11 +149,7 @@
   <string name="displayOrientation_entryReverseLandscape">Ters Manzara</string>
   <string name="displayOrientation_entryPortrait">Portre</string>
   <string name="displayOrientation_entryReversePortrait">Ters portre</string>
-  <string name="displayPosition_title">Dikey ekran konumu</string>
-  <string name="displayPosition_entryBottom">Alt</string>
-  <string name="displayPosition_entryMiddle">Orta</string>
-  <string name="displayPosition_entryTop">Üst</string>
-  <string name="displayResolution_entry960x720">960 x 720</string>
+    <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
   <string name="displayResolution_entry640x480">640 x 480</string>
   <string name="displayResolution_entry480x360">480 x 360</string>
@@ -185,18 +165,18 @@
   <string name="videoHardwareType_entryQ">Q profili</string>
   <string name="videoHardwareType_entryT">T profili</string>
   <string name="videoHardwareType_entryCustom">Özel profil</string>
-  <string name="gln64Frameskip_title">Kare atlama</string>
-  <string name="gln64Frameskip_entryNever">Asla kare atlama</string>
-  <string name="gln64Frameskip_entryUpTo1">1 kareden fazla değil</string>
-  <string name="gln64Frameskip_entryUpTo2">2 kareden fazla değil</string>
-  <string name="gln64Frameskip_entryUpTo3">3 kareden fazla değil</string>
-  <string name="gln64Frameskip_entryUpTo4">4 kareden fazla değil</string>
-  <string name="gln64Frameskip_entryUpTo5">5 kareden fazla değil</string>
-  <string name="gln64Frameskip_entryExactly1">Tam olarak 1 kare</string>
-  <string name="gln64Frameskip_entryExactly2">Tam olarak 2 kare</string>
-  <string name="gln64Frameskip_entryExactly3">Tam olarak 3 kare</string>
-  <string name="gln64Frameskip_entryExactly4">Tam olarak 4 kare</string>
-  <string name="gln64Frameskip_entryExactly5">Tam olarak 5 kare</string>
+  <string name="glide64Frameskip_title">Kare atlama</string>
+  <string name="glide64Frameskip_entryNever">Asla kare atlama</string>
+  <string name="glide64Frameskip_entryUpTo1">1 kareden fazla değil</string>
+  <string name="glide64Frameskip_entryUpTo2">2 kareden fazla değil</string>
+  <string name="glide64Frameskip_entryUpTo3">3 kareden fazla değil</string>
+  <string name="glide64Frameskip_entryUpTo4">4 kareden fazla değil</string>
+  <string name="glide64Frameskip_entryUpTo5">5 kareden fazla değil</string>
+  <string name="glide64Frameskip_entryExactly1">Tam olarak 1 kare</string>
+  <string name="glide64Frameskip_entryExactly2">Tam olarak 2 kare</string>
+  <string name="glide64Frameskip_entryExactly3">Tam olarak 3 kare</string>
+  <string name="glide64Frameskip_entryExactly4">Tam olarak 4 kare</string>
+  <string name="glide64Frameskip_entryExactly5">Tam olarak 5 kare</string>
   <string name="riceScreenUpdate_title">Ekran güncelleme yöntemi</string>
   <string name="riceScreenUpdate_entryRomDefault">ROM varsayılan</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">VI kökenli güncelleştirme</string>
@@ -234,10 +214,7 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Seçilen klasör: %1$s</string>
-  <string name="pathHiResTextures_title">İçe doku paketi aktar</string>
-  <string name="pathHiResTextures_summary">Oyuna özel dokuları (ZIP biçiminde) uygula</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Oyun kayıtları klasörü</string>
+    <string name="pathGameSaves_title">Oyun kayıtları klasörü</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Çoklu Oyuncu</string>
   <string name="playerMap_summary">Her oyuncunun kumandasını tanımla</string>
@@ -255,9 +232,7 @@
   <string name="confirmDeleteProfile_message">\"%1$s\" profili silinsin mi?</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">UYARI</string>
-  <string name="invalidInstall_message">Mupen64 Plus AE düzgün yüklenmiş olmayabilir. Herhangi bir hata ile karşılaşıyorsanız lütfen uygulamayı tekrardan yükleyiniz.</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">dosya adı</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">Başlatılıyor</string>
@@ -271,12 +246,10 @@
   <string name="cheatNotes_title">Notlar</string>
   <string name="cheatNotes_none">(bu hile için notlar mevcut değil)</string>
   <!--Cheat Editor-->
-  <string name="cheatEditor_help">Yardım</string>
-  <string name="cheatEditor_confirm">Emin misiniz?</string>
+    <string name="cheatEditor_confirm">Emin misiniz?</string>
   <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Dokular çıkartılıyor</string>
-  <string name="pathHiResTexturesTask_message">Lütfen sabırlı olun. Bu işlem biraz zaman alabilir.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Doku çıkartma sorunu!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Doku çıkartma sorunu!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <string name="scanning_title">Taranıyor...</string>

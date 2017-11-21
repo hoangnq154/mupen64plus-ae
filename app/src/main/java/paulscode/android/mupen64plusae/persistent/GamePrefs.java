@@ -96,9 +96,6 @@ public class GamePrefs
     /** The selected video plug-in. */
     public final Plugin videoPlugin;
 
-    /** True if gln64 video plug-in is enabled. */
-    public final boolean isGln64Enabled;
-
     /** True if rice video plug-in is enabled. */
     public final boolean isRiceEnabled;
 
@@ -112,27 +109,6 @@ public class GamePrefs
 
     /** True if angrylion video plug-in is enabled. */
     public final boolean isAngrylionEnabled;
-
-    /** The maximum frameskip in the gln64 library. */
-    public final int gln64MaxFrameskip;
-
-    /** True if auto-frameskip is enabled in the gln64 library. */
-    public final boolean isGln64AutoFrameskipEnabled;
-
-    /** True if fog is enabled in the gln64 library. */
-    public final boolean isGln64FogEnabled;
-
-    /** True if SaI texture filtering is enabled in the gln64 library. */
-    public final boolean isGln64SaiEnabled;
-
-    /** True if force screen clear is enabled in the gln64 library. */
-    public final boolean isGln64ScreenClearEnabled;
-
-    /** True if alpha test is enabled in the gln64 library. */
-    public final boolean isGln64AlphaTestEnabled;
-
-    /** True if depth coordinates hack is enabled in the gln64 library. */
-    public final boolean isGln64HackDepthEnabled;
 
     /** True if auto-frameskip is enabled in the rice library. */
     public final boolean isRiceAutoFrameskipEnabled;
@@ -406,17 +382,6 @@ public class GamePrefs
 
 
         videoPlugin = new Plugin( emulationProfile, appData.libsDir, "videoPlugin" );
-
-        // Video prefs - gln64
-        isGln64Enabled = videoPlugin.name.equals( "libmupen64plus-video-gln64.so" );
-        int maxFrameskip = getSafeInt( emulationProfile, "gln64Frameskip", 0 );
-        isGln64AutoFrameskipEnabled = maxFrameskip < 0;
-        gln64MaxFrameskip = Math.abs( maxFrameskip );
-        isGln64FogEnabled = emulationProfile.get( "gln64Fog", "0" ).equals( "1" );
-        isGln64SaiEnabled = emulationProfile.get( "gln64Sai", "0" ).equals( "1" );
-        isGln64ScreenClearEnabled = emulationProfile.get( "gln64ScreenClear", "1" ).equals( "1" );
-        isGln64AlphaTestEnabled = emulationProfile.get( "gln64AlphaTest", "1" ).equals( "1" );
-        isGln64HackDepthEnabled = emulationProfile.get( "gln64HackDepth", "1" ).equals( "1" );
 
         // Video prefs - rice
         isRiceEnabled = videoPlugin.name.equals( "libmupen64plus-video-rice.so" );

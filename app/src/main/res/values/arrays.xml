@@ -99,18 +99,6 @@
     <string name="displayOrientation_default" translatable="false">0</string>
 
     <!-- Screen Position List -->
-    <string-array name="displayPosition_entries" translatable="false">
-        <item>@string/displayPosition_entryTop</item>
-        <item>@string/displayPosition_entryMiddle</item>
-        <item>@string/displayPosition_entryBottom</item>
-    </string-array>
-    <string-array name="displayPosition_values" translatable="false">
-        <item>48</item> <!-- Gravity.TOP -->
-        <item>16</item> <!-- Gravity.CENTER_VERTICAL -->
-        <item>80</item> <!-- Gravity.BOTTOM -->
-    </string-array>
-
-    <string name="displayPosition_default" translatable="false">48</string>
 
     <!-- Screen Resolution List -->
     <string-array name="displayResolution_entries" translatable="false">
@@ -227,49 +215,19 @@
 
     <string name="videoHardwareType_default" translatable="false">-1</string>
 
-    <!-- Gln64 Frameskip List -->
-    <string-array name="gln64Frameskip_entries" translatable="false">
-        <item>@string/gln64Frameskip_entryNever</item>
-        <item>@string/gln64Frameskip_entryUpTo1</item>
-        <item>@string/gln64Frameskip_entryUpTo2</item>
-        <item>@string/gln64Frameskip_entryUpTo3</item>
-        <item>@string/gln64Frameskip_entryUpTo4</item>
-        <item>@string/gln64Frameskip_entryUpTo5</item>
-        <item>@string/gln64Frameskip_entryExactly1</item>
-        <item>@string/gln64Frameskip_entryExactly2</item>
-        <item>@string/gln64Frameskip_entryExactly3</item>
-        <item>@string/gln64Frameskip_entryExactly4</item>
-        <item>@string/gln64Frameskip_entryExactly5</item>
-    </string-array>
-    <string-array name="gln64Frameskip_values" translatable="false">
-        <item>0</item>
-        <item>-1</item>
-        <item>-2</item>
-        <item>-3</item>
-        <item>-4</item>
-        <item>-5</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string name="gln64Frameskip_default" translatable="false">-5</string>
-
-    <!-- Glide64 Frameskip List (re-use gln64 strings)-->
+    <!-- Glide64 Frameskip List (re-use glide64 strings)-->
     <string-array name="glide64Frameskip_entries" translatable="false">
-        <item>@string/gln64Frameskip_entryNever</item>
-        <item>@string/gln64Frameskip_entryUpTo1</item>
-        <item>@string/gln64Frameskip_entryUpTo2</item>
-        <item>@string/gln64Frameskip_entryUpTo3</item>
-        <item>@string/gln64Frameskip_entryUpTo4</item>
-        <item>@string/gln64Frameskip_entryUpTo5</item>
-        <item>@string/gln64Frameskip_entryExactly1</item>
-        <item>@string/gln64Frameskip_entryExactly2</item>
-        <item>@string/gln64Frameskip_entryExactly3</item>
-        <item>@string/gln64Frameskip_entryExactly4</item>
-        <item>@string/gln64Frameskip_entryExactly5</item>
+        <item>@string/glide64Frameskip_entryNever</item>
+        <item>@string/glide64Frameskip_entryUpTo1</item>
+        <item>@string/glide64Frameskip_entryUpTo2</item>
+        <item>@string/glide64Frameskip_entryUpTo3</item>
+        <item>@string/glide64Frameskip_entryUpTo4</item>
+        <item>@string/glide64Frameskip_entryUpTo5</item>
+        <item>@string/glide64Frameskip_entryExactly1</item>
+        <item>@string/glide64Frameskip_entryExactly2</item>
+        <item>@string/glide64Frameskip_entryExactly3</item>
+        <item>@string/glide64Frameskip_entryExactly4</item>
+        <item>@string/glide64Frameskip_entryExactly5</item>
     </string-array>
     <string-array name="glide64Frameskip_values" translatable="false">
         <item>0</item>
@@ -1009,7 +967,6 @@
         <item>@string/videoPlugin_entryNone</item>
         <item>@string/videoPlugin_entryGlide64</item>
         <item>@string/videoPlugin_entryGliden64</item>
-        <item>@string/videoPlugin_entryGln64</item>
         <item>@string/videoPlugin_entryRice</item>
         <item>@string/videoPlugin_entryAngrylion</item>
     </string-array>
@@ -1017,7 +974,6 @@
         <item></item>
         <item>libmupen64plus-video-glide64mk2.so</item>
         <item>libmupen64plus-video-gliden64.so</item>
-        <item>libmupen64plus-video-gln64.so</item>
         <item>libmupen64plus-video-rice.so</item>
         <item>libmupen64plus-video-angrylion.so</item>
     </string-array>

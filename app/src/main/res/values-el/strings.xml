@@ -46,18 +46,14 @@
   <!--Developers: Follow punctuation and grammar as shown below-->
   <!--**************************************************************************-->
   <!--Something happening (typically use '-ing' and '…')-->
-  <string name="toast_rebuildingCheats">Ανακατασκευή βάσης δεδομένων κωδικών</string>
-  <string name="toast_launchingEmulator">Έναρξη εξομοιωτή…</string>
-  <string name="toast_loadingSession">Αυτόμ. επαναφορά παιχνιδιού…</string>
-  <string name="toast_savingSession">Αυτόμ. αποθήκευση παιχνιδού…</string>
-  <string name="toast_loadingSlot">Φόρτωμα θέσης %1$d…</string>
+    <string name="toast_launchingEmulator">Έναρξη εξομοιωτή…</string>
+    <string name="toast_loadingSlot">Φόρτωμα θέσης %1$d…</string>
   <string name="toast_savingSlot">Αποθήκευση θέσης %1$d…</string>
   <string name="toast_loadingFile">Φόρτωμα %1$s…</string>
   <string name="toast_savingFile">Αποθήκευση %1$s…</string>
   <string name="toast_overwritingFile">Αντικατάσταση %1$s…</string>
   <!--Something happened (use '.')-->
-  <string name="toast_usingSlot">Χρήση θέσης %1$d.</string>
-  <string name="toast_sdInaccessible">Η κάρτα SD δεν είναι διαθέσιμη (αποσυνδέστε το καλώδιο USB και δοκιμάστε ξανά).</string>
+    <string name="toast_sdInaccessible">Η κάρτα SD δεν είναι διαθέσιμη (αποσυνδέστε το καλώδιο USB και δοκιμάστε ξανά).</string>
   <!--**************************************************************************-->
   <!--Preference Menu Strings-->
   <!--Developers: Please follow naming conventions described in preferences.xml-->
@@ -74,8 +70,7 @@
   <string name="screenCheats_summaryDisabled">Απενεργοποιημένο</string>
   <!--Preference Categories-->
   <string name="categoryCheats_title">Ρυθμίσεις κωδικών (παρατ. πάτημα για σημειώσεις)</string>
-  <string name="categoryGln64_title">Ρυθμίσεις Gln64</string>
-  <string name="categoryRice_title">Ρυθμίσεις Rice</string>
+    <string name="categoryRice_title">Ρυθμίσεις Rice</string>
   <string name="categoryGlide64_title">Ρυθμίσεις Glide64</string>
   <string name="categoryAudio_title">Ήχος</string>
   <string name="categoryTouchscreen_title">Οθόνη αφής</string>
@@ -89,15 +84,7 @@
   <string name="inputVolumeMappable_summary">Επιτρέπει την χρήση των πλήκτρων έντασης ως κουμπιά χειριστηρίου</string>
   <string name="inputShareController_title">Κοινή χρήση χειριστηρίου</string>
   <string name="inputShareController_summary">Επιτρέπει σε μία συσκευή εισόδου να χειρλιζεται πολλούς παίκτες</string>
-  <string name="gln64Fog_title">Ομίχλη</string>
-  <string name="gln64Fog_summary">(χρειάζεται δουλειά)</string>
-  <string name="gln64Sai_title">2xSaI φίλτρο υφής</string>
-  <string name="gln64Sai_summary">Μειώνει το πιξέλιασμα υφών</string>
-  <string name="gln64ScreenClear_title">Αναγκαστικός καθαρισμός οθόνης</string>
-  <string name="gln64ScreenClear_summary">Απενεργοποίηση για τα ταχύτητα (μπορεί να προκαλέσει γραφικές ανωμαλίες )</string>
-  <string name="gln64AlphaTest_title">Δοκιμή διαφάνειας alpha</string>
-  <string name="gln64AlphaTest_summary">Απενεργοποιημένο για ταχύτητα (προκαλεί μαύρες υφές)</string>
-  <string name="riceAutoFrameskip_title">Αυτόμ. παράλειψη καρέ</string>
+    <string name="riceAutoFrameskip_title">Αυτόμ. παράλειψη καρέ</string>
   <string name="riceAutoFrameskip_summary">Βελτιώνει την ταχύτητα παιχνιδιού με κόστος τον ρυθμό καρέ</string>
   <string name="riceFastTexture_title">Γρήγορο φόρτωμα υφών</string>
   <string name="riceFastTexture_summary">Διορθώνει τις μεταβάσεις κύκλου</string>
@@ -122,11 +109,7 @@
   <string name="displayOrientation_entryReverseLandscape">Ανεστραμμένο τοπίο</string>
   <string name="displayOrientation_entryPortrait">Πορτραίτο</string>
   <string name="displayOrientation_entryReversePortrait">Ανεστραμμένο Πορτραίτο</string>
-  <string name="displayPosition_title">Κάθετη θέαση</string>
-  <string name="displayPosition_entryBottom">Κάτω μέρος</string>
-  <string name="displayPosition_entryMiddle">Μέση</string>
-  <string name="displayPosition_entryTop">Πάνω μέρος</string>
-  <string name="displayResolution_title">Ανάλυση σχεδίασης</string>
+    <string name="displayResolution_title">Ανάλυση σχεδίασης</string>
   <string name="displayResolution_entryNative">Φυσική (μεγαλύτερη ποιότητα)</string>
   <string name="displayResolution_entry960x720">960 x 720</string>
   <string name="displayResolution_entry800x600">800 x 600</string>
@@ -144,18 +127,18 @@
   <string name="videoHardwareType_entryO2">O-2 προφίλ</string>
   <string name="videoHardwareType_entryQ">Q προφίλ</string>
   <string name="videoHardwareType_entryT">T προφίλ</string>
-  <string name="gln64Frameskip_title">Παράλειψη καρέ</string>
-  <string name="gln64Frameskip_entryNever">Καμία παράλειψη καρέ </string>
-  <string name="gln64Frameskip_entryUpTo1">Όχι πάνω από 1 καρέ</string>
-  <string name="gln64Frameskip_entryUpTo2">Όχι πάνω από 2 καρέ</string>
-  <string name="gln64Frameskip_entryUpTo3">Όχι πάνω από 3 καρέ</string>
-  <string name="gln64Frameskip_entryUpTo4">Όχι πάνω από 4 καρέ</string>
-  <string name="gln64Frameskip_entryUpTo5">Όχι πάνω από 5 καρέ</string>
-  <string name="gln64Frameskip_entryExactly1">Ακριβώς 1 καρέ</string>
-  <string name="gln64Frameskip_entryExactly2">Ακριβώς 2 καρέ</string>
-  <string name="gln64Frameskip_entryExactly3">Ακριβώς 3 καρέ</string>
-  <string name="gln64Frameskip_entryExactly4">Ακριβώς 4 καρέ</string>
-  <string name="gln64Frameskip_entryExactly5">Ακριβώς 5 καρέ</string>
+  <string name="glide64Frameskip_title">Παράλειψη καρέ</string>
+  <string name="glide64Frameskip_entryNever">Καμία παράλειψη καρέ </string>
+  <string name="glide64Frameskip_entryUpTo1">Όχι πάνω από 1 καρέ</string>
+  <string name="glide64Frameskip_entryUpTo2">Όχι πάνω από 2 καρέ</string>
+  <string name="glide64Frameskip_entryUpTo3">Όχι πάνω από 3 καρέ</string>
+  <string name="glide64Frameskip_entryUpTo4">Όχι πάνω από 4 καρέ</string>
+  <string name="glide64Frameskip_entryUpTo5">Όχι πάνω από 5 καρέ</string>
+  <string name="glide64Frameskip_entryExactly1">Ακριβώς 1 καρέ</string>
+  <string name="glide64Frameskip_entryExactly2">Ακριβώς 2 καρέ</string>
+  <string name="glide64Frameskip_entryExactly3">Ακριβώς 3 καρέ</string>
+  <string name="glide64Frameskip_entryExactly4">Ακριβώς 4 καρέ</string>
+  <string name="glide64Frameskip_entryExactly5">Ακριβώς 5 καρέ</string>
   <string name="riceScreenUpdate_title">Μέθοδος ανανέωσης οθόνης</string>
   <string name="riceScreenUpdate_entryRomDefault">Προεπιλεγμένο ROM</string>
   <string name="riceScreenUpdate_entryVIOriginUpdate">Ανανέωση προέλευσης VI</string>
@@ -193,10 +176,7 @@
   <!--'~' indicates rel path & use storage dir if path doesn't exist-->
   <!--'!' indicates rel path & create parent dirs if path doesn't exist-->
   <string name="pathPreference_dialogTitle">Επιλεγμένος φάκελος: %1$s</string>
-  <string name="pathHiResTextures_title">Προσθήκη πακέτου υφής</string>
-  <string name="pathHiResTextures_summary">Εφαρμογή προσαρμοσμένων υφών (αρχείο ZIP) σε ένα παιχνίδι</string>
-  <string name="pathHiResTextures_default">~</string>
-  <string name="pathGameSaves_title">Φάκελος αποθήκευσης παιχνιδιών</string>
+    <string name="pathGameSaves_title">Φάκελος αποθήκευσης παιχνιδιών</string>
   <!--Player Map Preferences-->
   <string name="playerMap_title">Πολλαπλών παικτών</string>
   <string name="playerMap_summary">Ορισμός χειριστηρίου κάθε παίκτη</string>
@@ -213,9 +193,7 @@
   <string name="confirmUnmapAll_message">Διαγρ. αντιστοιχίσεων όλων των εισόδων για %1$s;</string>
   <!--Change Log-->
   <!--Corrupt Installation Warning-->
-  <string name="invalidInstall_title">Προσοχή</string>
-  <string name="invalidInstall_message">Το Mupen64 Plus AE μπορεί να μην εγκαταστάθηκε σωστά. Παρακαλώ δοκιμάστε την επανεγκατάσταση της εφαρμογής αν βιώσετε κρασαρίσματα.</string>
-  <!--Text Editor Hints (start lower-case)-->
+    <!--Text Editor Hints (start lower-case)-->
   <string name="hintFileSave">διαδρομή αρχείου</string>
   <!--Asset Extractor-->
   <string name="assetExtractor_initializing">Αρχικοποίηση</string>
@@ -229,11 +207,9 @@
   <string name="cheatNotes_title">Σημειώσεις</string>
   <string name="cheatNotes_none">(δεν υπάρχουν σημειώσεις για αυτόν τον κωδικό)</string>
   <!--Cheat Editor-->
-  <string name="cheatEditor_help">Βοήθεια</string>
-  <!--Hi-Res Texture Unpacking-->
+    <!--Hi-Res Texture Unpacking-->
   <string name="pathHiResTexturesTask_title">Ξεπακετάρισμα υφών</string>
-  <string name="pathHiResTexturesTask_message">Παρακαλώ περιμένετε. Αυτή ενέργεια μπορεί να πάρει λίγη ώρα.</string>
-  <string name="pathHiResTexturesTask_errorMessage">Σφάλμα ξεπακεταρίσματος υφών!</string>
+    <string name="pathHiResTexturesTask_errorMessage">Σφάλμα ξεπακεταρίσματος υφών!</string>
   <!--Scan Roms Dialog-->
   <!--ROM Scanning-->
   <!--ROM information calculation-->
