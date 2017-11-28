@@ -31,7 +31,7 @@ public:
 
   void setTargetFPS(int fps) { _targetFPS = fps; }
 
-  bool willSkipNext() { return (_skipCounter > 0); }
+  bool willSkipNext();
 
   void update();
 
@@ -40,6 +40,7 @@ private:
   int _maxSkips;
   int _targetFPS;
   int _skipCounter;
+  bool _hasExecutedFrame;
   unsigned int _initialTicks;
   unsigned int _actualFrame;
 };

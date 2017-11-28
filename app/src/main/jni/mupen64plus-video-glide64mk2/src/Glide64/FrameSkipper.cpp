@@ -18,12 +18,21 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "FrameSkipper.h"
+#include "Gfx_1.3.h"
 #include <SDL_timer.h>
 
 FrameSkipper::FrameSkipper()
   : _skipType(AUTO), _maxSkips(2), _targetFPS(60),
-    _skipCounter(0), _initialTicks(0), _actualFrame(0)
+    _skipCounter(0), _initialTicks(0), _actualFrame(0), _hasExecutedFrame(false)
 {
+}
+
+
+bool FrameSkipper::willSkipNext()
+{
+    bool hasExecutedFrame = _hasExecutedFrame;
+    _hasExecutedFrame = true;
+    return _skipCounter > 0 && hasExecutedFrame;
 }
 
 void FrameSkipper::update()
@@ -52,9 +61,10 @@ void FrameSkipper::update()
     {
       // We are ahead of schedule, so do nothing
     }
-    else if (desiredFrame > _actualFrame && _skipCounter < _maxSkips)
+    else if (desiredFrame > _actualFrame && fabs(desiredFrame - _actualFrame) > 1.0 &&_skipCounter < _maxSkips)
     {
       // We are behind schedule and we are allowed to skip this frame, so skip this frame
+      //We also must be behind by more than 1 frame to account for timer inaccuracies.
       _skipCounter++;
     }
     else
@@ -64,6 +74,9 @@ void FrameSkipper::update()
       _skipCounter = 0;
       // ... and pretend we are on schedule (if not already)
       _actualFrame = desiredFrame;
+
+      // This non-skipped frame must be executed at least once
+      _hasExecutedFrame = false;
     }
   }
   else // skipType == AUTO, initializing
