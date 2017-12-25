@@ -30,6 +30,7 @@
 enum { RDRAM_MAX_SIZE = 0x800000 };
 enum { CART_ROM_MAX_SIZE = 0x4000000 };
 enum { DD_ROM_MAX_SIZE = 0x400000 };
+enum { MEMORY_REGIONS = 0x10000 };
 
 typedef void (*read32fn)(void*,uint32_t,uint32_t*);
 typedef void (*write32fn)(void*,uint32_t,uint32_t,uint32_t);
@@ -51,7 +52,7 @@ struct mem_mapping
 
 struct memory
 {
-    struct mem_handler handlers[0x10000];
+    struct mem_handler handlers[MEMORY_REGIONS];
     void* base;
 
 #ifdef DBG
@@ -99,17 +100,28 @@ void init_memory(struct memory* mem,
 
 static osal_inline const struct mem_handler* mem_get_handler(const struct memory* mem, uint32_t address)
 {
-    return &mem->handlers[address >> 16];
+    uint32_t region = address >> 16;
+    if (region >= 0 && region < MEMORY_REGIONS) {
+        return &mem->handlers[region];
+    } else {
+        return NULL;
+    }
 }
 
 static osal_inline void mem_read32(const struct mem_handler* handler, uint32_t address, uint32_t* value)
 {
-    handler->read32(handler->opaque, address, value);
+    *value = 0;
+
+    if(handler != NULL) {
+        handler->read32(handler->opaque, address, value);
+    }
 }
 
 static osal_inline void mem_write32(const struct mem_handler* handler, uint32_t address, uint32_t value, uint32_t mask)
 {
-    handler->write32(handler->opaque, address, value, mask);
+    if(handler != NULL) {
+        handler->write32(handler->opaque, address, value, mask);
+    }
 }
 
 void apply_mem_mapping(struct memory* mem, const struct mem_mapping* mapping);

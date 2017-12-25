@@ -199,7 +199,10 @@ static void map_region(struct memory* mem,
 #endif
     {
         (void)type;
-        mem->handlers[region] = *handler;
+
+        if (region >= 0 && region < MEMORY_REGIONS) {
+            mem->handlers[region] = *handler;
+        }
     }
 }
 
