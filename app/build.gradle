@@ -19,7 +19,7 @@ android {
         checkReleaseBuilds = false
     }
     defaultConfig {
-        applicationId = "org.mupen64plusae.v3.alpha"
+        applicationId = "org.mupen64plusae.v3.fzurita"
 
         ndk {
             abiFilters "armeabi-v7a", "x86"
