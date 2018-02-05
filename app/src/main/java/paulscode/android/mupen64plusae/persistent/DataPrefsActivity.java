@@ -31,7 +31,7 @@ import android.support.v7.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import java.io.File;
 

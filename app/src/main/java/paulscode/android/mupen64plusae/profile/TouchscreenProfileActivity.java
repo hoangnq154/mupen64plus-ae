@@ -47,7 +47,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import paulscode.android.mupen64plusae.ActivityHelper;
 import paulscode.android.mupen64plusae.MenuListView;
