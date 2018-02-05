@@ -39,7 +39,7 @@ import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import java.io.File;
 

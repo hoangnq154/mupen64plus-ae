@@ -19,7 +19,7 @@ android {
     lintOptions.checkReleaseBuilds = false
 
     defaultConfig {
-        applicationId = "org.mupen64plusae.v3.alpha"
+        applicationId = "org.mupen64plusae.v3.fzurita"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode = 86
