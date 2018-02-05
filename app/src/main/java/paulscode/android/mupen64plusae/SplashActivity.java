@@ -42,7 +42,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import java.io.File;
 import java.util.List;
