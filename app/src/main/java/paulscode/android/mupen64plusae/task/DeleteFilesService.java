@@ -37,7 +37,7 @@ import android.os.Message;
 import android.os.Process;
 import android.support.v4.app.NotificationCompat;
 
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import java.io.File;
 import java.util.ArrayList;
