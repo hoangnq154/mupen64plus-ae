@@ -27,7 +27,7 @@ import android.os.Bundle;
 import android.support.v7.preference.PreferenceManager;
 import android.text.TextUtils;
 
-import org.mupen64plusae.v3.alpha.R;
+import org.mupen64plusae.v3.fzurita.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
