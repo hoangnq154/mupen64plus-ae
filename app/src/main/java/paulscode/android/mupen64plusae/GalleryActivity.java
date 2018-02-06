@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.RemoteException;
 import androidx.fragment.app.FragmentManager;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -45,6 +46,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.view.MenuItem.OnActionExpandListener;
 
+import org.json.JSONException;
 import org.mupen64plusae.v3.fzurita.R;
 
 import java.io.File;
@@ -53,8 +55,13 @@ import java.util.Date;
 import java.util.List;
 
 import paulscode.android.mupen64plusae.GameSidebar.GameSidebarActionHandler;
+import paulscode.android.mupen64plusae.billing.IabHelper;
+import paulscode.android.mupen64plusae.billing.IabResult;
+import paulscode.android.mupen64plusae.billing.Inventory;
+import paulscode.android.mupen64plusae.billing.Purchase;
 import paulscode.android.mupen64plusae.dialog.ConfirmationDialog;
 import paulscode.android.mupen64plusae.dialog.ConfirmationDialog.PromptConfirmListener;
+import paulscode.android.mupen64plusae.dialog.DynamicMenuDialogFragment;
 import paulscode.android.mupen64plusae.dialog.Popups;
 import paulscode.android.mupen64plusae.jni.CoreService;
 import paulscode.android.mupen64plusae.persistent.AppData;
@@ -74,20 +81,24 @@ import paulscode.android.mupen64plusae.util.RomDatabase;
 import paulscode.android.mupen64plusae.util.RomHeader;
 
 public class GalleryActivity extends AppCompatActivity implements GameSidebarActionHandler, PromptConfirmListener,
-        GalleryRefreshFinishedListener
+        GalleryRefreshFinishedListener, DynamicMenuDialogFragment.OnDynamicDialogMenuItemSelectedListener
 {
     // Saved instance states
     private static final String STATE_QUERY = "STATE_QUERY";
     private static final String STATE_SIDEBAR = "STATE_SIDEBAR";
     private static final String STATE_FILE_TO_DELETE = "STATE_FILE_TO_DELETE";
     private static final String STATE_CACHE_ROM_INFO_FRAGMENT= "STATE_CACHE_ROM_INFO_FRAGMENT";
+    private static final String STATE_DONATION_ITEM = "STATE_DONATION_ITEM";
     private static final String STATE_EXTRACT_ROM_FRAGMENT= "STATE_EXTRACT_ROM_FRAGMENT";
     private static final String STATE_GALLERY_REFRESH_NEEDED= "STATE_GALLERY_REFRESH_NEEDED";
     private static final String STATE_GAME_STARTED_EXTERNALLY = "STATE_GAME_STARTED_EXTERNALLY";
     private static final String STATE_REMOVE_FROM_LIBRARY_DIALOG = "STATE_REMOVE_FROM_LIBRARY_DIALOG";
+    private static final String STATE_DONATION_DIALOG = "STATE_DONATION_DIALOG";
     public static final String KEY_IS_LEANBACK = "KEY_IS_LEANBACK";
 
     public static final int REMOVE_FROM_LIBRARY_DIALOG_ID = 1;
+
+    private static final int IAP_HELPER_REQUEST_CODE = 10;
 
     // App data and user preferences
     private AppData mAppData = null;
@@ -122,6 +133,13 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
     boolean mRefreshNeeded = false;
 
     boolean mGameStartedExternally = false;
+    //In-app purchases helper library
+    IabHelper mIapHelper = null;
+
+    // Selected donation item id
+    String mSelectedDonationItem = null;
+
+    boolean mDonationDialogBeingShown = false;
 
     String mPathToDelete = null;
 
@@ -329,7 +347,7 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         {
             final MenuItem profileGroupItem = mDrawerList.getMenu().findItem(R.id.menuItem_profiles);
             profileGroupItem.getSubMenu().removeItem(R.id.menuItem_touchscreenProfiles);
-            
+
             final MenuItem settingsGroupItem = mDrawerList.getMenu().findItem(R.id.menuItem_settings);
             settingsGroupItem.getSubMenu().removeItem(R.id.menuItem_categoryTouchscreen);
         }
@@ -356,6 +374,8 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         if( savedInstanceState != null )
         {
             mSelectedItem = null;
+            mSelectedDonationItem = null;
+
             final String sideBarMd5 = savedInstanceState.getString( STATE_SIDEBAR );
             if( sideBarMd5 != null )
             {
@@ -370,6 +390,7 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
             mPathToDelete = savedInstanceState.getString( STATE_FILE_TO_DELETE );
             mRefreshNeeded = savedInstanceState.getBoolean(STATE_GALLERY_REFRESH_NEEDED);
             mGameStartedExternally = savedInstanceState.getBoolean(STATE_GAME_STARTED_EXTERNALLY);
+            mSelectedDonationItem = savedInstanceState.getString(STATE_DONATION_ITEM);
         }
 
         // find the retained fragment on activity restarts
@@ -392,6 +413,31 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         // Set the sidebar opacity on the two sidebars
         mDrawerList.setBackground( new DrawerDrawable( mGlobalPrefs.displayActionBarTransparency ) );
         mGameSidebar.setBackground( new DrawerDrawable(mGlobalPrefs.displayActionBarTransparency ) );
+
+        // Set up in-app purchases
+        String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgb4" +
+                "ebxzn0suhPrEWHZ/XpVeK25odQOSzClOQGq0AQmwdC6BscU5/a3zlTEs8G9sRsb34tAFo+oA" +
+                "a14njRpHAJ+XCthtb9oSn0sN4zuNITlJAeyfGa22HVE+M7gwzCi1DF/Vf/DXujJ4IXXepdLdh" +
+                "8iYYAxD8BQ9Gwg61IM7L620vRkIlkt7FWeNaHKtWEWnnT4ExksPaBdEyVEFGszOd5U3AhFkbI" +
+                "Bu/xqo0nckTGM6yjAIJF8C3wAs0+9BBstuu+mVXJ5O+hKHi6HS/hcBQVzlfqTLbCHmEZRqjlSv" +
+                "+fdy3WWDFi1d7cVzLVxUvIk2aQpK4Pjiiu4e3ZVxUuhOCYQIDAQAB";
+
+        // compute your public key and store it in base64EncodedPublicKey
+        mIapHelper = null;
+
+        mIapHelper = new IabHelper(this, base64EncodedPublicKey);
+
+        mIapHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            public void onIabSetupFinished(IabResult result) {
+                if (!result.isSuccess()) {
+                    // Oh no, there was a problem.
+                    Log.d("GalleryActivity", "Problem setting up In-app Billing: " + result);
+
+                    GalleryActivity.this.mIapHelper = null;
+                }
+                // Hooray, IAB is fully set up!
+            }
+        });
 
         // Get the ROM path if it was passed from another activity/app
         final Bundle extras = getIntent().getExtras();
@@ -429,6 +475,9 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
             savedInstanceState.putString( STATE_QUERY, mSearchView.getQuery().toString() );
         if( mSelectedItem != null )
             savedInstanceState.putString( STATE_SIDEBAR, mSelectedItem.md5 );
+        if( mSelectedDonationItem != null)
+            savedInstanceState.putString( STATE_DONATION_ITEM, mSelectedDonationItem );
+
         savedInstanceState.putBoolean(STATE_GALLERY_REFRESH_NEEDED, mRefreshNeeded);
         savedInstanceState.putBoolean(STATE_GAME_STARTED_EXTERNALLY, mGameStartedExternally);
         savedInstanceState.putString( STATE_FILE_TO_DELETE, mPathToDelete);
@@ -454,6 +503,17 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
     {
         super.onPostCreate( savedInstanceState );
         mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mIapHelper != null) try {
+            mIapHelper.dispose();
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            e.printStackTrace();
+        }
+        mIapHelper = null;
     }
 
     @Override
@@ -654,6 +714,12 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         case R.id.menuItem_clear:
             ActivityHelper.startDeleteTextureActivity(this);
             return true;
+        case R.id.menuItem_donate: {
+
+            if(mIapHelper != null && !mDonationDialogBeingShown)
+                showInAppPurchases();
+        }
+            return true;
         default:
             return super.onOptionsItemSelected(item);
         }
@@ -846,8 +912,14 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        // Pass on the activity result to the helper for handling
+        if(requestCode == IAP_HELPER_REQUEST_CODE)
+        {
+            mIapHelper.handleActivityResult(requestCode, resultCode, data);
+        }
         // Check which request we're responding to
-        if (requestCode == ActivityHelper.SCAN_ROM_REQUEST_CODE) {
+        else if (requestCode == ActivityHelper.SCAN_ROM_REQUEST_CODE) {
             // Make sure the request was successful
             if (resultCode == RESULT_OK && data != null)
             {
@@ -1067,4 +1139,194 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
     public boolean onKey(View view, int i, KeyEvent keyEvent) {
         return false;
     }
+
+    @Override
+    public void onPrepareMenuList(MenuListView listView)
+    {
+
+    }
+
+    private void showInAppPurchases()
+    {
+        mDonationDialogBeingShown = true;
+        ArrayList<String> donationOptions = new ArrayList<String>();
+        donationOptions.add("one_dollar");
+        donationOptions.add("three_dollar");
+        donationOptions.add("five_dollar");
+        donationOptions.add("ten_dollar");
+
+        ArrayList<String> donationPrices = new ArrayList<String>();
+
+        for(String optionIds : donationOptions)
+        {
+            try {
+                String price = mIapHelper.getPricesDev("org.mupen64plusae.v3.fzurita", optionIds);
+
+                donationPrices.add(price != null ? price : getString(R.string.galleryDonationValueNotAvailable));
+            } catch (RemoteException|JSONException e) {
+                donationPrices.add(getString(R.string.galleryDonationValueNotAvailable));
+            }
+        }
+
+        DynamicMenuDialogFragment menuDialogFragment = DynamicMenuDialogFragment.newInstance(0,
+                getString(R.string.galleryDonateDialogTitle), donationOptions, donationPrices);
+
+        FragmentManager fm = getSupportFragmentManager();
+        menuDialogFragment.show(fm, STATE_DONATION_DIALOG);
+    }
+
+    @Override
+    public void onDialogMenuItemSelected(int dialogId, String itemId)
+    {
+        mDonationDialogBeingShown = false;
+        // Have we been disposed of in the meantime? If so, quit.
+        if (mIapHelper == null || itemId == null) return;
+
+        mSelectedDonationItem = itemId;
+
+        // Query inventory to make sure everything is consumed
+        Log.d("GalleryActivity", "Setup successful. Querying inventory.");
+        try {
+            mIapHelper.queryInventoryAsync(mGotInventoryListener);
+        } catch (IabHelper.IabAsyncInProgressException e) {
+            Log.d("GalleryActivity", "Error querying inventory. Another async operation in progress.");
+        }
+    }
+
+
+    // Callback for when a purchase is finished
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+
+            // if we were disposed of in the meantime, quit.
+            if (mIapHelper == null) return;
+
+            if (result.isFailure()) {
+                runOnUiThread( new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Notifier.showToast( GalleryActivity.this, getString(R.string.galleryDonationError) );
+                    }
+                } );
+                return;
+            }
+
+            try {
+                mIapHelper.consumeAsync(purchase, mConsumeFinishedListener);
+            } catch (IabHelper.IabAsyncInProgressException e) {
+                return;
+            }
+        }
+    };
+
+    // Called when consumption is complete
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+        public void onConsumeFinished(Purchase purchase, IabResult result) {
+
+            // if we were disposed of in the meantime, quit.
+            if (mIapHelper == null) return;
+
+            runOnUiThread( new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Notifier.showToast( GalleryActivity.this, getString(R.string.galleryDonationThankYou) );
+                }
+            } );
+
+            // Query inventory to make sure everything is consumed
+            Log.d("GalleryActivity", "Setup successful. Querying inventory.");
+            try {
+                mIapHelper.queryInventoryAsync(mGotInventoryListener);
+            } catch (IabHelper.IabAsyncInProgressException e) {
+                Log.d("GalleryActivity", "Error querying inventory. Another async operation in progress.");
+            }
+        }
+    };
+
+    // Listener that's called when we finish querying the items and subscriptions we own
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+            Log.d("GalleryActivity", "Query inventory finished.");
+
+            // Have we been disposed of in the meantime? If so, quit.
+            if (mIapHelper == null) return;
+
+            if (result.isFailure()) {
+                runOnUiThread( new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Notifier.showToast( GalleryActivity.this, getString(R.string.galleryDonationError) );
+                    }
+                } );
+                return;
+            }
+
+            Log.d("GalleryActivity", "Query inventory was successful.");
+
+            ArrayList<String> donationOptions = new ArrayList<String>();
+            donationOptions.add("android.test.purchased");
+            donationOptions.add("one_dollar");
+            donationOptions.add("three_dollar");
+            donationOptions.add("five_dollar");
+            donationOptions.add("ten_dollar");
+
+            /*
+             * Check for items we own. Notice that for each purchase, we check
+             * the developer payload to see if it's correct! See
+             * verifyDeveloperPayload().
+             */
+
+            Purchase donationPurchase = null;
+            int index = 0;
+            String foundDonation = null;
+
+            //Find an item already purchased and consume it
+            while(donationPurchase == null && index < donationOptions.size())
+            {
+                donationPurchase = inventory.getPurchase(donationOptions.get(index));
+
+                if(donationPurchase != null)
+                {
+                    foundDonation = donationOptions.get(index);
+                }
+
+                ++index;
+            }
+            // Check for gas delivery -- if we own gas, we should fill up the tank immediately
+
+
+            if (donationPurchase != null) {
+                try {
+                    mIapHelper.consumeAsync(inventory.getPurchase(foundDonation), mConsumeFinishedListener);
+                } catch (IabHelper.IabAsyncInProgressException e) {
+                    Log.d("GalleryActivity", "Error quering inventory");
+                }
+                return;
+            }
+            else if (mSelectedDonationItem != null)
+            {
+                runOnUiThread( new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                    try {
+                        mIapHelper.launchPurchaseFlow(GalleryActivity.this, mSelectedDonationItem, IAP_HELPER_REQUEST_CODE,
+                                mPurchaseFinishedListener, "");
+                    } catch (IabHelper.IabAsyncInProgressException e) {
+                        Log.d("GalleryActivity","Error launching purchase flow. Another async operation in progress.");
+                    }
+
+                    mSelectedDonationItem = null;
+                    }
+                } );
+            }
+        }
+    };
 }
