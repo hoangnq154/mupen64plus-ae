@@ -384,7 +384,7 @@ static size_t romdatabase_resolve_round(void)
             entry->entry.sidmaduration = ref->forcealignmentofpidma;
             entry->entry.set_flags |= ROMDATABASE_ENTRY_FORCEALIGNMENTOFPIDMA;
         }
-        
+
         free(entry->entry.refmd5);
         entry->entry.refmd5 = NULL;
     }
