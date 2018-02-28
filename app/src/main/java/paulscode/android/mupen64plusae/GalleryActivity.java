@@ -1216,7 +1216,7 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         Log.d("GalleryActivity", "Setup successful. Querying inventory.");
         try {
             mIapHelper.queryInventoryAsync(mGotInventoryListener);
-        } catch (IabHelper.IabAsyncInProgressException e) {
+        } catch (IabHelper.IabAsyncInProgressException|java.lang.IllegalStateException e) {
             Log.d("GalleryActivity", "Error querying inventory. Another async operation in progress.");
         }
     }
