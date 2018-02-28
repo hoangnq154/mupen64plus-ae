@@ -72,52 +72,53 @@ import java.util.List;
  * has not yet completed will result in an exception being thrown.
  *
  */
+@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue"})
 public class IabHelper {
     // Is debug logging enabled?
-    boolean mDebugLog = false;
-    String mDebugTag = "IabHelper";
+    private boolean mDebugLog = false;
+    private String mDebugTag = "IabHelper";
 
     // Is setup done?
-    boolean mSetupDone = false;
+    private boolean mSetupDone = false;
 
     // Has this object been disposed of? (If so, we should ignore callbacks, etc)
-    boolean mDisposed = false;
+    private boolean mDisposed = false;
 
     // Do we need to dispose this object after an in-progress asynchronous operation?
-    boolean mDisposeAfterAsync = false;
+    private boolean mDisposeAfterAsync = false;
 
     // Are subscriptions supported?
-    boolean mSubscriptionsSupported = false;
+    private boolean mSubscriptionsSupported = false;
 
     // Is subscription update supported?
-    boolean mSubscriptionUpdateSupported = false;
+    private boolean mSubscriptionUpdateSupported = false;
 
     // Is an asynchronous operation in progress?
     // (only one at a time can be in progress)
-    boolean mAsyncInProgress = false;
+    private boolean mAsyncInProgress = false;
 
     // Ensure atomic access to mAsyncInProgress and mDisposeAfterAsync.
     private final Object mAsyncInProgressLock = new Object();
 
     // (for logging/debugging)
     // if mAsyncInProgress == true, what asynchronous operation is in progress?
-    String mAsyncOperation = "";
+    private String mAsyncOperation = "";
 
     // Context we were passed during initialization
-    Context mContext;
+    private Context mContext;
 
     // Connection to the service
-    IInAppBillingService mService;
-    ServiceConnection mServiceConn;
+    private IInAppBillingService mService;
+    private ServiceConnection mServiceConn;
 
     // The request code used to launch purchase flow
-    int mRequestCode;
+    private int mRequestCode;
 
     // The item type of the current purchase flow
-    String mPurchasingItemType;
+    private String mPurchasingItemType;
 
     // Public key for verifying signature, in base64 encoding
-    String mSignatureBase64 = null;
+    private String mSignatureBase64 = null;
 
     // Billing response codes
     public static final int BILLING_RESPONSE_RESULT_OK = 0;
@@ -479,10 +480,13 @@ public class IabHelper {
             mRequestCode = requestCode;
             mPurchaseListener = listener;
             mPurchasingItemType = itemType;
-            act.startIntentSenderForResult(pendingIntent.getIntentSender(),
-                    requestCode, new Intent(),
-                    Integer.valueOf(0), Integer.valueOf(0),
-                    Integer.valueOf(0));
+
+            if (pendingIntent != null) {
+                act.startIntentSenderForResult(pendingIntent.getIntentSender(),
+                        requestCode, new Intent(),
+                        0, 0,
+                        0);
+            }
         }
         catch (SendIntentException e) {
             logError("SendIntentException while launching purchase flow for sku " + sku);
@@ -545,13 +549,16 @@ public class IabHelper {
 
             if (purchaseData == null || dataSignature == null) {
                 logError("BUG: either purchaseData or dataSignature is null.");
-                logDebug("Extras: " + data.getExtras().toString());
+
+                if (data.getExtras() != null) {
+                    logDebug("Extras: " + data.getExtras().toString());
+                }
                 result = new IabResult(IABHELPER_UNKNOWN_ERROR, "IAB returned null purchaseData or dataSignature");
                 if (mPurchaseListener != null) mPurchaseListener.onIabPurchaseFinished(result, null);
                 return true;
             }
 
-            Purchase purchase = null;
+            Purchase purchase;
             try {
                 purchase = new Purchase(mPurchasingItemType, purchaseData, dataSignature);
                 String sku = purchase.getSku();
@@ -803,7 +810,7 @@ public class IabHelper {
         throws IabAsyncInProgressException {
         checkNotDisposed();
         checkSetupDone("consume");
-        List<Purchase> purchases = new ArrayList<Purchase>();
+        List<Purchase> purchases = new ArrayList<>();
         purchases.add(purchase);
         consumeAsyncInternal(purchases, listener, null);
     }
@@ -870,7 +877,7 @@ public class IabHelper {
             logDebug("Bundle with null response code, assuming OK (known issue)");
             return BILLING_RESPONSE_RESULT_OK;
         }
-        else if (o instanceof Integer) return ((Integer)o).intValue();
+        else if (o instanceof Integer) return (Integer) o;
         else if (o instanceof Long) return (int)((Long)o).longValue();
         else {
             logError("Unexpected type for bundle response code.");
@@ -881,18 +888,24 @@ public class IabHelper {
 
     // Workaround to bug where sometimes response codes come as Long instead of Integer
     int getResponseCodeFromIntent(Intent i) {
-        Object o = i.getExtras().get(RESPONSE_CODE);
-        if (o == null) {
-            logError("Intent with no response code, assuming OK (known issue)");
-            return BILLING_RESPONSE_RESULT_OK;
+
+        if (i.getExtras() != null) {
+            Object o = i.getExtras().get(RESPONSE_CODE);
+            if (o == null) {
+                logError("Intent with no response code, assuming OK (known issue)");
+                return BILLING_RESPONSE_RESULT_OK;
+            }
+            else if (o instanceof Integer) return (Integer) o;
+            else if (o instanceof Long) return (int)((Long)o).longValue();
+            else {
+                logError("Unexpected type for intent response code.");
+                logError(o.getClass().getName());
+                throw new RuntimeException("Unexpected type for intent response code: " + o.getClass().getName());
+            }
+        } else {
+            throw new RuntimeException("Unexpected lack of extras");
         }
-        else if (o instanceof Integer) return ((Integer)o).intValue();
-        else if (o instanceof Long) return (int)((Long)o).longValue();
-        else {
-            logError("Unexpected type for intent response code.");
-            logError(o.getClass().getName());
-            throw new RuntimeException("Unexpected type for intent response code: " + o.getClass().getName());
-        }
+
     }
 
     void flagStartAsync(String operation) throws IabAsyncInProgressException {
@@ -972,6 +985,14 @@ public class IabHelper {
             ArrayList<String> signatureList = ownedItems.getStringArrayList(
                     RESPONSE_INAPP_SIGNATURE_LIST);
 
+            if (purchaseDataList == null) {
+                throw new RuntimeException("Purchase data list cannot be null");
+            }
+
+            if (signatureList == null || ownedSkus == null) {
+                throw new RuntimeException("Purchase data cannot be null");
+            }
+
             for (int i = 0; i < purchaseDataList.size(); ++i) {
                 String purchaseData = purchaseDataList.get(i);
                 String signature = signatureList.get(i);
@@ -1006,7 +1027,7 @@ public class IabHelper {
     int querySkuDetails(String itemType, Inventory inv, List<String> moreSkus)
             throws RemoteException, JSONException {
         logDebug("Querying SKU details.");
-        ArrayList<String> skuList = new ArrayList<String>();
+        ArrayList<String> skuList = new ArrayList<>();
         skuList.addAll(inv.getAllOwnedSkus(itemType));
         if (moreSkus != null) {
             for (String sku : moreSkus) {
@@ -1022,22 +1043,18 @@ public class IabHelper {
         }
 
         // Split the sku list in blocks of no more than 20 elements.
-        ArrayList<ArrayList<String>> packs = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> packs = new ArrayList<>();
         ArrayList<String> tempList;
         int n = skuList.size() / 20;
         int mod = skuList.size() % 20;
         for (int i = 0; i < n; i++) {
-            tempList = new ArrayList<String>();
-            for (String s : skuList.subList(i * 20, i * 20 + 20)) {
-                tempList.add(s);
-            }
+            tempList = new ArrayList<>();
+            tempList.addAll(skuList.subList(i * 20, i * 20 + 20));
             packs.add(tempList);
         }
         if (mod != 0) {
-            tempList = new ArrayList<String>();
-            for (String s : skuList.subList(n * 20, n * 20 + mod)) {
-                tempList.add(s);
-            }
+            tempList = new ArrayList<>();
+            tempList.addAll(skuList.subList(n * 20, n * 20 + mod));
             packs.add(tempList);
         }
 
@@ -1061,10 +1078,12 @@ public class IabHelper {
             ArrayList<String> responseList = skuDetails.getStringArrayList(
                     RESPONSE_GET_SKU_DETAILS_LIST);
 
-            for (String thisResponse : responseList) {
-                SkuDetails d = new SkuDetails(itemType, thisResponse);
-                logDebug("Got sku details: " + d);
-                inv.addSkuDetails(d);
+            if (responseList != null) {
+                for (String thisResponse : responseList) {
+                    SkuDetails d = new SkuDetails(itemType, thisResponse);
+                    logDebug("Got sku details: " + d);
+                    inv.addSkuDetails(d);
+                }
             }
         }
 
@@ -1079,7 +1098,7 @@ public class IabHelper {
         flagStartAsync("consume");
         (new Thread(new Runnable() {
             public void run() {
-                final List<IabResult> results = new ArrayList<IabResult>();
+                final List<IabResult> results = new ArrayList<>();
                 for (Purchase purchase : purchases) {
                     try {
                         consume(purchase);
@@ -1123,7 +1142,7 @@ public class IabHelper {
 
     public String getPricesDev(String packageName, String skuId) throws RemoteException, JSONException{
 
-        ArrayList<String> skuList = new ArrayList<String>();
+        ArrayList<String> skuList = new ArrayList<>();
         skuList.add("full.discount.fetch");
         skuList.add(skuId);
         Bundle querySkus = new Bundle();
@@ -1137,8 +1156,8 @@ public class IabHelper {
             if (response == 0) {
                 ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
 
-                for (String thisResponse : responseList) {
-                    JSONObject object = new JSONObject(thisResponse);
+                if (responseList != null && responseList.size() > 0) {
+                    JSONObject object = new JSONObject(responseList.get(0));
                     String sku = object.getString("productId");
                     return object.getString("price");
                 }
