@@ -1107,6 +1107,7 @@ m64p_error main_run(void)
     unsigned int count_per_op;
     unsigned int emumode;
     unsigned int disable_extra_mem;
+    unsigned int force_alignment_pi_dma;
     int si_dma_duration;
     int no_compiled_jump;
     int randomize_interrupt;
@@ -1143,7 +1144,7 @@ m64p_error main_run(void)
     else
         disable_extra_mem = ConfigGetParamInt(g_CoreConfig, "DisableExtraMem");
 
-
+    force_alignment_pi_dma = ROM_PARAMS.forcealignmentofpidma;
     rdram_size = (disable_extra_mem == 0) ? 0x800000 : 0x400000;
 
     if (count_per_op <= 0)
@@ -1325,6 +1326,7 @@ m64p_error main_run(void)
                 count_per_op,
                 no_compiled_jump,
                 randomize_interrupt,
+                force_alignment_pi_dma,
                 &g_dev.ai, &g_iaudio_out_backend_plugin_compat,
                 si_dma_duration,
                 rdram_size,
