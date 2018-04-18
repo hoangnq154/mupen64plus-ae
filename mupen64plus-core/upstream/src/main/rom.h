@@ -51,6 +51,7 @@ typedef struct _rom_params
    unsigned char countperop;
    int disableextramem;
    unsigned int sidmaduration;
+   unsigned int forcealignmentofpidma;
 } rom_params;
 
 extern m64p_rom_header   ROM_HEADER;
@@ -126,6 +127,7 @@ typedef struct
    unsigned char transferpak; /* 0 - No, 1 - Yes boolean for transferpak support. */
    unsigned char mempak; /* 0 - No, 1 - Yes boolean for mempak support. */
    unsigned int sidmaduration;
+   unsigned int forcealignmentofpidma;
    uint32_t set_flags;
 } romdatabase_entry;
 
@@ -142,6 +144,7 @@ typedef struct
 #define ROMDATABASE_ENTRY_TRANSFERPAK   BIT(9)
 #define ROMDATABASE_ENTRY_MEMPAK        BIT(10)
 #define ROMDATABASE_ENTRY_SIDMADURATION BIT(11)
+#define ROMDATABASE_ENTRY_FORCEALIGNMENTOFPIDMA BIT(12)
 
 typedef struct _romdatabase_search
 {
