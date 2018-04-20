@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import androidx.fragment.app.FragmentManager;
@@ -63,6 +64,7 @@ import paulscode.android.mupen64plusae.billing.Purchase;
 import paulscode.android.mupen64plusae.dialog.ConfirmationDialog;
 import paulscode.android.mupen64plusae.dialog.ConfirmationDialog.PromptConfirmListener;
 import paulscode.android.mupen64plusae.dialog.DynamicMenuDialogFragment;
+import paulscode.android.mupen64plusae.dialog.PleaseRateDialog;
 import paulscode.android.mupen64plusae.dialog.Popups;
 import paulscode.android.mupen64plusae.jni.CoreService;
 import paulscode.android.mupen64plusae.persistent.AppData;
@@ -82,7 +84,8 @@ import paulscode.android.mupen64plusae.util.RomDatabase;
 import paulscode.android.mupen64plusae.util.RomHeader;
 
 public class GalleryActivity extends AppCompatActivity implements GameSidebarActionHandler, PromptConfirmListener,
-        GalleryRefreshFinishedListener, DynamicMenuDialogFragment.OnDynamicDialogMenuItemSelectedListener
+        GalleryRefreshFinishedListener, DynamicMenuDialogFragment.OnDynamicDialogMenuItemSelectedListener,
+        PleaseRateDialog.PromptRateListener
 {
     // Saved instance states
     private static final String STATE_QUERY = "STATE_QUERY";
@@ -96,7 +99,10 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
     private static final String STATE_RESTART_CONFIRM_DIALOG = "STATE_RESTART_CONFIRM_DIALOG";
     private static final String STATE_REMOVE_FROM_LIBRARY_DIALOG = "STATE_REMOVE_FROM_LIBRARY_DIALOG";
     private static final String STATE_DONATION_DIALOG = "STATE_DONATION_DIALOG";
+    private static final String STATE_PLEASE_RATE_DIALOG = "STATE_PLEASE_RATE_DIALOG";
+
     public static final String KEY_IS_LEANBACK = "KEY_IS_LEANBACK";
+
     public static final int RESTART_CONFIRM_DIALOG_ID = 0;
     public static final int REMOVE_FROM_LIBRARY_DIALOG_ID = 1;
 
@@ -429,18 +435,30 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
             }
         });
 
+
         // Get the ROM path if it was passed from another activity/app
         final Bundle extras = getIntent().getExtras();
         loadGameFromExtras(extras);
 
-        if(ActivityHelper.isServiceRunning(this, ActivityHelper.coreServiceProcessName)) {
-            Log.i("GalleryActivity", "CoreService is running");
-        }
+        // If no game was launched on creation
+        if (extras == null) {
 
-        Intent intent = new Intent(CoreService.SERVICE_EVENT);
-        // You can also include some extra data.
-        intent.putExtra(CoreService.SERVICE_RESUME, true);
-        sendBroadcast(intent);
+            if(ActivityHelper.isServiceRunning(this, ActivityHelper.coreServiceProcessName)) {
+                Log.i("GalleryActivity", "CoreService is running");
+            }
+
+            if(mAppData.getNumberOfSuccesfulLaunches() > 5 && mAppData.getTimeSinceFirstStart() > 5 && !mAppData.hasAppBeenRated()) {
+                if (fm.findFragmentByTag(STATE_PLEASE_RATE_DIALOG) == null) {
+                    final PleaseRateDialog pleaseRateDialog = PleaseRateDialog.newInstance();
+                    pleaseRateDialog.show(fm, STATE_PLEASE_RATE_DIALOG);
+                }
+            }
+
+            Intent intent = new Intent(CoreService.SERVICE_EVENT);
+            // You can also include some extra data.
+            intent.putExtra(CoreService.SERVICE_RESUME, true);
+            sendBroadcast(intent);
+        }
     }
 
     @Override
@@ -810,6 +828,21 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         }
     }
 
+    @Override
+    public void onPromptRateDialogClosed(int which)
+    {
+        Log.i( "GalleryActivity", "onPromptRateDialogClosed" );
+
+        if( which == DialogInterface.BUTTON_POSITIVE ) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
+            mAppData.setAppHasBeenRated();
+        } else if (which == DialogInterface.BUTTON_NEUTRAL) {
+            mAppData.resetStatistics();
+        } else if (which == DialogInterface.BUTTON_NEGATIVE) {
+            mAppData.setAppHasBeenRated();
+        }
+    }
+
     public void onGalleryItemClick(GalleryItem item)
     {
         mSelectedItem = item;
@@ -968,6 +1001,8 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
             {
                 finishAffinity();
             }
+
+            mAppData.incrementNumberOfSuccesfulLaunches();
         }
     }
 
@@ -1169,13 +1204,13 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
     private void showInAppPurchases()
     {
         mDonationDialogBeingShown = true;
-        ArrayList<String> donationOptions = new ArrayList<String>();
+        ArrayList<String> donationOptions = new ArrayList<>();
         donationOptions.add("one_dollar");
         donationOptions.add("three_dollar");
         donationOptions.add("five_dollar");
         donationOptions.add("ten_dollar");
 
-        ArrayList<String> donationPrices = new ArrayList<String>();
+        ArrayList<String> donationPrices = new ArrayList<>();
 
         for(String optionIds : donationOptions)
         {
@@ -1236,7 +1271,7 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
             try {
                 mIapHelper.consumeAsync(purchase, mConsumeFinishedListener);
             } catch (IabHelper.IabAsyncInProgressException e) {
-                return;
+                Log.w("GalleryActivity", e.toString());
             }
         }
     };
@@ -1289,7 +1324,7 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
 
             Log.d("GalleryActivity", "Query inventory was successful.");
 
-            ArrayList<String> donationOptions = new ArrayList<String>();
+            ArrayList<String> donationOptions = new ArrayList<>();
             donationOptions.add("android.test.purchased");
             donationOptions.add("one_dollar");
             donationOptions.add("three_dollar");
@@ -1319,15 +1354,12 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
                 ++index;
             }
             // Check for gas delivery -- if we own gas, we should fill up the tank immediately
-
-
             if (donationPurchase != null) {
                 try {
                     mIapHelper.consumeAsync(inventory.getPurchase(foundDonation), mConsumeFinishedListener);
                 } catch (IabHelper.IabAsyncInProgressException e) {
                     Log.d("GalleryActivity", "Error quering inventory");
                 }
-                return;
             }
             else if (mSelectedDonationItem != null)
             {
