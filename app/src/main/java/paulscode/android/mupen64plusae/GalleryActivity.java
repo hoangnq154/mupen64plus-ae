@@ -702,9 +702,6 @@ public class GalleryActivity extends AppCompatActivity implements GameSidebarAct
         case R.id.menuItem_credits:
             ActivityHelper.launchUri(GalleryActivity.this, R.string.uri_credits);
             return true;
-        case R.id.menuItem_localeOverride:
-            mGlobalPrefs.changeLocale(this);
-            return true;
         case R.id.menuItem_extract:
             ActivityHelper.starExtractTextureActivity(this);
             return true;
