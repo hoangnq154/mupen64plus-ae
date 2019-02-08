@@ -136,7 +136,7 @@ extern "C" {
 
 void display_warning(const char *text, ...) ATTR_FMT(1,2);
 void init_geometry();
-void init_textures();
+void init_textures(int width, int height);
 void init_combiner();
 void free_textures();
 void updateCombiner(int i);
